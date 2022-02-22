@@ -16,6 +16,8 @@
 		B503091B27C4E3020066D0EB /* RijksArtGalleryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503091A27C4E3020066D0EB /* RijksArtGalleryUITests.swift */; };
 		B503091D27C4E3020066D0EB /* RijksArtGalleryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503091C27C4E3020066D0EB /* RijksArtGalleryUITestsLaunchTests.swift */; };
 		B503092B27C4E79D0066D0EB /* ArtItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503092A27C4E79D0066D0EB /* ArtItem.swift */; };
+		B503093027C4FE410066D0EB /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503092F27C4FE410066D0EB /* NetworkService.swift */; };
+		B503093227C4FEDB0066D0EB /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503093127C4FEDB0066D0EB /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		B503091A27C4E3020066D0EB /* RijksArtGalleryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksArtGalleryUITests.swift; sourceTree = "<group>"; };
 		B503091C27C4E3020066D0EB /* RijksArtGalleryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksArtGalleryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B503092A27C4E79D0066D0EB /* ArtItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItem.swift; sourceTree = "<group>"; };
+		B503092F27C4FE410066D0EB /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		B503093127C4FEDB0066D0EB /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 				B503090727C4E3020066D0EB /* Info.plist */,
 				B50308FD27C4E2FE0066D0EB /* ViewController.swift */,
 				B503092927C4E7880066D0EB /* Models */,
+				B503092D27C4FE010066D0EB /* Networking */,
 				B503092C27C4EB640066D0EB /* Support */,
 			);
 			path = RijksArtGallery;
@@ -141,6 +146,23 @@
 				B503090427C4E3020066D0EB /* LaunchScreen.storyboard */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		B503092D27C4FE010066D0EB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B503093127C4FEDB0066D0EB /* HTTPMethod.swift */,
+				B503092E27C4FE2C0066D0EB /* Services */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B503092E27C4FE2C0066D0EB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B503092F27C4FE410066D0EB /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,7 +295,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B503093027C4FE410066D0EB /* NetworkService.swift in Sources */,
 				B50308FE27C4E2FE0066D0EB /* ViewController.swift in Sources */,
+				B503093227C4FEDB0066D0EB /* HTTPMethod.swift in Sources */,
 				B50308FA27C4E2FE0066D0EB /* AppDelegate.swift in Sources */,
 				B503092B27C4E79D0066D0EB /* ArtItem.swift in Sources */,
 				B50308FC27C4E2FE0066D0EB /* SceneDelegate.swift in Sources */,
