@@ -15,6 +15,7 @@
 		B503091127C4E3020066D0EB /* RijksArtGalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503091027C4E3020066D0EB /* RijksArtGalleryTests.swift */; };
 		B503091B27C4E3020066D0EB /* RijksArtGalleryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503091A27C4E3020066D0EB /* RijksArtGalleryUITests.swift */; };
 		B503091D27C4E3020066D0EB /* RijksArtGalleryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503091C27C4E3020066D0EB /* RijksArtGalleryUITestsLaunchTests.swift */; };
+		B503092B27C4E79D0066D0EB /* ArtItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503092A27C4E79D0066D0EB /* ArtItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		B503091627C4E3020066D0EB /* RijksArtGalleryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RijksArtGalleryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B503091A27C4E3020066D0EB /* RijksArtGalleryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksArtGalleryUITests.swift; sourceTree = "<group>"; };
 		B503091C27C4E3020066D0EB /* RijksArtGalleryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksArtGalleryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B503092A27C4E79D0066D0EB /* ArtItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +99,13 @@
 		B50308F827C4E2FE0066D0EB /* RijksArtGallery */ = {
 			isa = PBXGroup;
 			children = (
+				B503090727C4E3020066D0EB /* Info.plist */,
 				B50308F927C4E2FE0066D0EB /* AppDelegate.swift */,
 				B50308FB27C4E2FE0066D0EB /* SceneDelegate.swift */,
 				B50308FD27C4E2FE0066D0EB /* ViewController.swift */,
 				B503090227C4E3020066D0EB /* Assets.xcassets */,
 				B503090427C4E3020066D0EB /* LaunchScreen.storyboard */,
-				B503090727C4E3020066D0EB /* Info.plist */,
+				B503092927C4E7880066D0EB /* Models */,
 			);
 			path = RijksArtGallery;
 			sourceTree = "<group>";
@@ -122,6 +125,14 @@
 				B503091C27C4E3020066D0EB /* RijksArtGalleryUITestsLaunchTests.swift */,
 			);
 			path = RijksArtGalleryUITests;
+			sourceTree = "<group>";
+		};
+		B503092927C4E7880066D0EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B503092A27C4E79D0066D0EB /* ArtItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +267,7 @@
 			files = (
 				B50308FE27C4E2FE0066D0EB /* ViewController.swift in Sources */,
 				B50308FA27C4E2FE0066D0EB /* AppDelegate.swift in Sources */,
+				B503092B27C4E79D0066D0EB /* ArtItem.swift in Sources */,
 				B50308FC27C4E2FE0066D0EB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
