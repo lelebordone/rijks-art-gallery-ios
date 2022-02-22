@@ -1,7 +1,7 @@
 import Foundation
 
 // MARK: - Art Item
-protocol ArtItem: Codable {
+protocol ArtItem: Decodable {
     var id: String { get }
     /// Number of the art item. This is used in the [Collection Details API](https://data.rijksmuseum.nl/object-metadata/api/#collection-details-api) to get an item's details (i.e. `objectNumber`).
     var objectNumber: String { get }
@@ -20,7 +20,7 @@ protocol ArtItem: Codable {
 // MARK: - Collections
 // MARK: Collection API network response
 // TODO: think about how to abstract it, in order to have just one generic response model
-struct CollectionNetworkResponse: Codable {
+struct CollectionNetworkResponse: Decodable {
     let elapsedMilliseconds, count: Int
     let artItems: [ArtItemCompact]
     
@@ -46,7 +46,7 @@ struct ArtItemCompact: ArtItem {
 }
 
 // MARK:  Image
-struct Image: Codable {
+struct Image: Decodable {
     let guid: String
     let offsetPercentageX, offsetPercentageY, width, height: Int
     let url: String
@@ -54,7 +54,7 @@ struct Image: Codable {
 
 // MARK: Links
 /// The web and [Collection Details API](https://data.rijksmuseum.nl/object-metadata/api/#collection-details-api) links of the art item
-struct Links: Codable {
+struct Links: Decodable {
     let linksSelf, web: String
 
     enum CodingKeys: String, CodingKey {
@@ -65,7 +65,7 @@ struct Links: Codable {
 
 // MARK: - Collection Details
 // MARK: Collection Details API network response
-struct CollectionDetailsNetworkResponse: Codable {
+struct CollectionDetailsNetworkResponse: Decodable {
     let elapsedMilliseconds, count: Int
     let artItemDetails: ArtItemDetails
     
@@ -108,40 +108,40 @@ struct ArtItemDetails: ArtItem {
 }
 
 // MARK: Acquisition
-struct Acquisition: Codable {
+struct Acquisition: Decodable {
     let method, date, creditLine: String
 }
 
 // MARK: Classification
-struct Classification: Codable {
+struct Classification: Decodable {
     let iconClassIdentifier: [String]
 }
 
 // MARK: Color
-struct Color: Codable {
+struct Color: Decodable {
     let percentage: Int
     let hex: String
 }
 
 // MARK: ColorsWithNormalization
-struct ColorsWithNormalization: Codable {
+struct ColorsWithNormalization: Decodable {
     let originalHex, normalizedHex: String
 }
 
 // MARK: Dating
-struct Dating: Codable {
+struct Dating: Decodable {
     let presentingDate: String
     let sortingDate, period, yearEarly, yearLate: Int
 }
 
 // MARK: Dimension
-struct Dimension: Codable {
+struct Dimension: Decodable {
     let unit, type: String
     let value: String
 }
 
 // MARK: Label
-struct Label: Codable {
+struct Label: Decodable {
     let title, makerLine, labelDescription, notes, date: String
 
     enum CodingKeys: String, CodingKey {
@@ -153,12 +153,12 @@ struct Label: Codable {
 
 // MARK: CollectionDetailsLink
 /// The [Collection Details API](https://data.rijksmuseum.nl/object-metadata/api/#collection-details-api) link of the art item
-struct CollectionDetailsLink: Codable {
+struct CollectionDetailsLink: Decodable {
     let search: String
 }
 
 // MARK: PrincipalMaker
-struct PrincipalMaker: Codable {
+struct PrincipalMaker: Decodable {
     let name, unFixedName, placeOfBirth, dateOfBirth: String
     let dateOfDeath: String
     let placeOfDeath: String
