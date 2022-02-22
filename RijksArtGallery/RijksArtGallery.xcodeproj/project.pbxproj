@@ -20,6 +20,7 @@
 		B503093227C4FEDB0066D0EB /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503093127C4FEDB0066D0EB /* HTTPMethod.swift */; };
 		B503093427C54C6E0066D0EB /* APICollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503093327C54C6E0066D0EB /* APICollection.swift */; };
 		B503093627C5593F0066D0EB /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503093527C5593F0066D0EB /* NetworkErrors.swift */; };
+		B503093827C55D8B0066D0EB /* NetworkConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503093727C55D8B0066D0EB /* NetworkConfigurator.swift */; };
 		B503093D27C55FB70066D0EB /* URLRequest+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503093C27C55FB70066D0EB /* URLRequest+.swift */; };
 		B503093F27C5634B0066D0EB /* URLComponents+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503093E27C5634B0066D0EB /* URLComponents+.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		B503093127C4FEDB0066D0EB /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		B503093327C54C6E0066D0EB /* APICollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICollection.swift; sourceTree = "<group>"; };
 		B503093527C5593F0066D0EB /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		B503093727C55D8B0066D0EB /* NetworkConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigurator.swift; sourceTree = "<group>"; };
 		B503093C27C55FB70066D0EB /* URLRequest+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+.swift"; sourceTree = "<group>"; };
 		B503093E27C5634B0066D0EB /* URLComponents+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +164,7 @@
 			children = (
 				B503093327C54C6E0066D0EB /* APICollection.swift */,
 				B503093127C4FEDB0066D0EB /* HTTPMethod.swift */,
+				B503093727C55D8B0066D0EB /* NetworkConfigurator.swift */,
 				B503093527C5593F0066D0EB /* NetworkErrors.swift */,
 				B503092E27C4FE2C0066D0EB /* Services */,
 			);
@@ -316,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B503093027C4FE410066D0EB /* NetworkService.swift in Sources */,
+				B503093827C55D8B0066D0EB /* NetworkConfigurator.swift in Sources */,
 				B50308FE27C4E2FE0066D0EB /* ViewController.swift in Sources */,
 				B503093227C4FEDB0066D0EB /* HTTPMethod.swift in Sources */,
 				B503093427C54C6E0066D0EB /* APICollection.swift in Sources */,

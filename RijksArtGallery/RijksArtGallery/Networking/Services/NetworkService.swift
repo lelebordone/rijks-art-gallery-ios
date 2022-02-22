@@ -14,12 +14,15 @@ protocol NetworkService {
     var path: String { get }
     /// The query parameters of the service (e.g. `endpoint?key=value`)
     var queryItems: QueryItems? { get }
+    /// The `JSONDecoder` instance which will be used to decode the service's response data
+    var jsonDecoder: JSONDecoder { get }
 }
 
 extension NetworkService {
     var baseURL: String { api.domain }
     var method: HTTPMethod { .get }
     var queryItems: QueryItems? { nil }
+    var jsonDecoder: JSONDecoder { JSONDecoder() }
     
     /// The full endpoint URL string (i.e. `baseURL` + `path`)
     var endpointURLString: String { baseURL + path }
