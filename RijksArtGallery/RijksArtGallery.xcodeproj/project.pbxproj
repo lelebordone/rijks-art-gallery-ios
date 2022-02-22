@@ -100,12 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				B503090727C4E3020066D0EB /* Info.plist */,
-				B50308F927C4E2FE0066D0EB /* AppDelegate.swift */,
-				B50308FB27C4E2FE0066D0EB /* SceneDelegate.swift */,
 				B50308FD27C4E2FE0066D0EB /* ViewController.swift */,
-				B503090227C4E3020066D0EB /* Assets.xcassets */,
-				B503090427C4E3020066D0EB /* LaunchScreen.storyboard */,
 				B503092927C4E7880066D0EB /* Models */,
+				B503092C27C4EB640066D0EB /* Support */,
 			);
 			path = RijksArtGallery;
 			sourceTree = "<group>";
@@ -133,6 +130,17 @@
 				B503092A27C4E79D0066D0EB /* ArtItem.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B503092C27C4EB640066D0EB /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				B50308F927C4E2FE0066D0EB /* AppDelegate.swift */,
+				B50308FB27C4E2FE0066D0EB /* SceneDelegate.swift */,
+				B503090227C4E3020066D0EB /* Assets.xcassets */,
+				B503090427C4E3020066D0EB /* LaunchScreen.storyboard */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
