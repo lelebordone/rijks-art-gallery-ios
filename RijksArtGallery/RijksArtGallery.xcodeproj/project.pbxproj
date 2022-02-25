@@ -30,6 +30,7 @@
 		B503094A27C8E8A90066D0EB /* JSONDecoder+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503094927C8E8A90066D0EB /* JSONDecoder+.swift */; };
 		B503094C27C8E8CC0066D0EB /* JSONDecoderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503094B27C8E8CC0066D0EB /* JSONDecoderMock.swift */; };
 		B503095127C925D60066D0EB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503095027C925D60066D0EB /* HomeViewModel.swift */; };
+		B503095527C92A1C0066D0EB /* ArtItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503095427C92A1C0066D0EB /* ArtItemService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		B503094927C8E8A90066D0EB /* JSONDecoder+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+.swift"; sourceTree = "<group>"; };
 		B503094B27C8E8CC0066D0EB /* JSONDecoderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderMock.swift; sourceTree = "<group>"; };
 		B503095027C925D60066D0EB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B503095427C92A1C0066D0EB /* ArtItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				B503093727C55D8B0066D0EB /* NetworkConfigurator.swift */,
 				B503093527C5593F0066D0EB /* NetworkErrors.swift */,
 				B503094027C632650066D0EB /* NetworkSession.swift */,
+				B503092F27C4FE410066D0EB /* NetworkService.swift */,
 				B503092E27C4FE2C0066D0EB /* Services */,
 			);
 			path = Networking;
@@ -189,7 +192,7 @@
 		B503092E27C4FE2C0066D0EB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				B503092F27C4FE410066D0EB /* NetworkService.swift */,
+				B503095327C929F30066D0EB /* ArtItems */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -239,6 +242,14 @@
 				B503095027C925D60066D0EB /* HomeViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		B503095327C929F30066D0EB /* ArtItems */ = {
+			isa = PBXGroup;
+			children = (
+				B503095427C92A1C0066D0EB /* ArtItemService.swift */,
+			);
+			path = ArtItems;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +388,7 @@
 				B503093227C4FEDB0066D0EB /* HTTPMethod.swift in Sources */,
 				B503093427C54C6E0066D0EB /* APICollection.swift in Sources */,
 				B503094327C632E10066D0EB /* URLSession+.swift in Sources */,
+				B503095527C92A1C0066D0EB /* ArtItemService.swift in Sources */,
 				B50308FA27C4E2FE0066D0EB /* AppDelegate.swift in Sources */,
 				B503093627C5593F0066D0EB /* NetworkErrors.swift in Sources */,
 				B503093F27C5634B0066D0EB /* URLComponents+.swift in Sources */,

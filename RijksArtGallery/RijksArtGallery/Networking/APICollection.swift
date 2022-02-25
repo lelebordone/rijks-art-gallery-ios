@@ -13,3 +13,7 @@ enum APICollection {
         }
     }
 }
+
+enum Culture: String {
+    case nl, en
+}
