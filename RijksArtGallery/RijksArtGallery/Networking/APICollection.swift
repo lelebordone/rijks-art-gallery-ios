@@ -12,4 +12,23 @@ enum APICollection {
             return "mock.domain"
         }
     }
+    
+    var key: String {
+        switch self {
+        case .rijksMuseum:
+            return "0fiuZFh4"
+        case .mock:
+            return "mock.key"
+        }
+    }
+}
+
+enum RijksDataIDs {
+    enum ParameterKeys {
+        static let apiKey = "key"
+    }
+}
+
+enum Culture: String {
+    case nl, en
 }

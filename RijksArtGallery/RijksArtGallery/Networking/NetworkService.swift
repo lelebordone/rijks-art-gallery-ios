@@ -1,7 +1,7 @@
 import Foundation
 
 protocol NetworkService {
-    associatedtype ResponseModel: Codable
+    associatedtype ResponseModel: Decodable
     
     typealias QueryItems = [String: Any]
     
@@ -22,7 +22,7 @@ extension NetworkService {
     var baseURL: String { api.domain }
     var method: HTTPMethod { .get }
     var queryItems: QueryItems? { nil }
-    var jsonDecoder: JSONDecoder { JSONDecoder() }
+    var jsonDecoder: DataDecoder { JSONDecoder() }
     
     /// The full endpoint URL string (i.e. `baseURL` + `path`)
     var endpointURLString: String { baseURL + path }
