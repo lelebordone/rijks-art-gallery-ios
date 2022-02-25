@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B50308FA27C4E2FE0066D0EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50308F927C4E2FE0066D0EB /* AppDelegate.swift */; };
 		B50308FC27C4E2FE0066D0EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50308FB27C4E2FE0066D0EB /* SceneDelegate.swift */; };
-		B50308FE27C4E2FE0066D0EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50308FD27C4E2FE0066D0EB /* ViewController.swift */; };
+		B50308FE27C4E2FE0066D0EB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50308FD27C4E2FE0066D0EB /* HomeViewController.swift */; };
 		B503090327C4E3020066D0EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B503090227C4E3020066D0EB /* Assets.xcassets */; };
 		B503090627C4E3020066D0EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B503090427C4E3020066D0EB /* LaunchScreen.storyboard */; };
 		B503091127C4E3020066D0EB /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503091027C4E3020066D0EB /* NetworkingTests.swift */; };
@@ -29,6 +29,7 @@
 		B503094827C6B5AC0066D0EB /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503094727C6B5AC0066D0EB /* NetworkServiceMock.swift */; };
 		B503094A27C8E8A90066D0EB /* JSONDecoder+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503094927C8E8A90066D0EB /* JSONDecoder+.swift */; };
 		B503094C27C8E8CC0066D0EB /* JSONDecoderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503094B27C8E8CC0066D0EB /* JSONDecoderMock.swift */; };
+		B503095127C925D60066D0EB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503095027C925D60066D0EB /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,7 @@
 		B50308F627C4E2FE0066D0EB /* RijksArtGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RijksArtGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50308F927C4E2FE0066D0EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B50308FB27C4E2FE0066D0EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B50308FD27C4E2FE0066D0EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B50308FD27C4E2FE0066D0EB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B503090227C4E3020066D0EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B503090527C4E3020066D0EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B503090727C4E3020066D0EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		B503094727C6B5AC0066D0EB /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
 		B503094927C8E8A90066D0EB /* JSONDecoder+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+.swift"; sourceTree = "<group>"; };
 		B503094B27C8E8CC0066D0EB /* JSONDecoderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderMock.swift; sourceTree = "<group>"; };
+		B503095027C925D60066D0EB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,10 +128,10 @@
 			isa = PBXGroup;
 			children = (
 				B503090727C4E3020066D0EB /* Info.plist */,
-				B50308FD27C4E2FE0066D0EB /* ViewController.swift */,
 				B503093B27C55FA40066D0EB /* Extensions */,
 				B503092927C4E7880066D0EB /* Models */,
 				B503092D27C4FE010066D0EB /* Networking */,
+				B503094F27C923160066D0EB /* Screens */,
 				B503092C27C4EB640066D0EB /* Support */,
 			);
 			path = RijksArtGallery;
@@ -220,6 +222,23 @@
 				B503094527C636260066D0EB /* NetworkSessionMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		B503094F27C923160066D0EB /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B503095227C925D80066D0EB /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		B503095227C925D80066D0EB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B50308FD27C4E2FE0066D0EB /* HomeViewController.swift */,
+				B503095027C925D60066D0EB /* HomeViewModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,7 +373,7 @@
 			files = (
 				B503093027C4FE410066D0EB /* NetworkService.swift in Sources */,
 				B503093827C55D8B0066D0EB /* NetworkConfigurator.swift in Sources */,
-				B50308FE27C4E2FE0066D0EB /* ViewController.swift in Sources */,
+				B50308FE27C4E2FE0066D0EB /* HomeViewController.swift in Sources */,
 				B503093227C4FEDB0066D0EB /* HTTPMethod.swift in Sources */,
 				B503093427C54C6E0066D0EB /* APICollection.swift in Sources */,
 				B503094327C632E10066D0EB /* URLSession+.swift in Sources */,
@@ -365,6 +384,7 @@
 				B503094127C632650066D0EB /* NetworkSession.swift in Sources */,
 				B50308FC27C4E2FE0066D0EB /* SceneDelegate.swift in Sources */,
 				B503094A27C8E8A90066D0EB /* JSONDecoder+.swift in Sources */,
+				B503095127C925D60066D0EB /* HomeViewModel.swift in Sources */,
 				B503093D27C55FB70066D0EB /* URLRequest+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
