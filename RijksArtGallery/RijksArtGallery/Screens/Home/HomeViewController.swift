@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         
         setupUI()
         
-        viewModel.fetchArtItemsCollection { result in
+        viewModel.fetchArtItemsCollection(with: .en) { result in
             switch result {
             case .success(let artItems):
                 print(artItems)

@@ -10,8 +10,9 @@ class HomeViewModel {
     }
     
     // MARK: - Data fetching
-    func fetchArtItemsCollection(completion: @escaping (Result<Void, NetworkError>) -> Void) {
-        ArtItemsAPIProvider.fetchArtItemsCollection(with: .en) { result in
+    func fetchArtItemsCollection(with culture: Culture = .nl,
+                                 completion: @escaping (Result<Void, NetworkError>) -> Void) {
+        ArtItemsAPIProvider.fetchArtItemsCollection(with: culture) { result in
             switch result {
             case .success(let artItems):
                 self.artItems = artItems

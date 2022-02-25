@@ -1,7 +1,7 @@
 import Foundation
 
 enum ArtItemsAPIProvider {
-    static func fetchArtItemsCollection(with culture: Culture,
+    static func fetchArtItemsCollection(with culture: Culture = .nl,
                                         completion: @escaping (Result<[ArtItemCompact], NetworkError>) -> Void) {
         NetworkConfigurator().request(service: ArtItemsCollectionService(culture: culture)) { response in
             switch response {
