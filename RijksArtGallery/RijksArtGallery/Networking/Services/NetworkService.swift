@@ -5,7 +5,7 @@ protocol NetworkService {
     
     typealias QueryItems = [String: Any]
     
-    /// The service's API
+    /// The service's API. Its `domain` property will be automatically used as `baseURL` if the latter is not implemented.
     var api: APICollection { get }
     /// The base URL (i.e. `domain`) of the service
     var baseURL: String { get }

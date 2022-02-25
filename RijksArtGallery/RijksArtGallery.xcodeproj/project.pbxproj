@@ -23,6 +23,8 @@
 		B503093827C55D8B0066D0EB /* NetworkConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503093727C55D8B0066D0EB /* NetworkConfigurator.swift */; };
 		B503093D27C55FB70066D0EB /* URLRequest+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503093C27C55FB70066D0EB /* URLRequest+.swift */; };
 		B503093F27C5634B0066D0EB /* URLComponents+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503093E27C5634B0066D0EB /* URLComponents+.swift */; };
+		B503094127C632650066D0EB /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503094027C632650066D0EB /* NetworkSession.swift */; };
+		B503094327C632E10066D0EB /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503094227C632E10066D0EB /* URLSession+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		B503093727C55D8B0066D0EB /* NetworkConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigurator.swift; sourceTree = "<group>"; };
 		B503093C27C55FB70066D0EB /* URLRequest+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+.swift"; sourceTree = "<group>"; };
 		B503093E27C5634B0066D0EB /* URLComponents+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+.swift"; sourceTree = "<group>"; };
+		B503094027C632650066D0EB /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
+		B503094227C632E10066D0EB /* URLSession+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 				B503093127C4FEDB0066D0EB /* HTTPMethod.swift */,
 				B503093727C55D8B0066D0EB /* NetworkConfigurator.swift */,
 				B503093527C5593F0066D0EB /* NetworkErrors.swift */,
+				B503094027C632650066D0EB /* NetworkSession.swift */,
 				B503092E27C4FE2C0066D0EB /* Services */,
 			);
 			path = Networking;
@@ -184,6 +189,7 @@
 			children = (
 				B503093E27C5634B0066D0EB /* URLComponents+.swift */,
 				B503093C27C55FB70066D0EB /* URLRequest+.swift */,
+				B503094227C632E10066D0EB /* URLSession+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -323,10 +329,12 @@
 				B50308FE27C4E2FE0066D0EB /* ViewController.swift in Sources */,
 				B503093227C4FEDB0066D0EB /* HTTPMethod.swift in Sources */,
 				B503093427C54C6E0066D0EB /* APICollection.swift in Sources */,
+				B503094327C632E10066D0EB /* URLSession+.swift in Sources */,
 				B50308FA27C4E2FE0066D0EB /* AppDelegate.swift in Sources */,
 				B503093627C5593F0066D0EB /* NetworkErrors.swift in Sources */,
 				B503093F27C5634B0066D0EB /* URLComponents+.swift in Sources */,
 				B503092B27C4E79D0066D0EB /* ArtItem.swift in Sources */,
+				B503094127C632650066D0EB /* NetworkSession.swift in Sources */,
 				B50308FC27C4E2FE0066D0EB /* SceneDelegate.swift in Sources */,
 				B503093D27C55FB70066D0EB /* URLRequest+.swift in Sources */,
 			);

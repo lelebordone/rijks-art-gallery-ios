@@ -1,9 +1,9 @@
 import Foundation
 
 struct NetworkConfigurator {
-    private let session: URLSession
+    private let session: NetworkSession
     
-    init(session: URLSession = .shared) {
+    init(session: NetworkSession = URLSession.shared) {
         self.session = session
     }
     
@@ -18,7 +18,7 @@ struct NetworkConfigurator {
         print("REQUEST: \(service)")
         #endif
         
-        session.dataTask(with: request) { (data, response, error) in
+        session.loadData(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 if let error = error {
                     completion(.failure(NetworkError.generic(error)))
@@ -51,6 +51,6 @@ struct NetworkConfigurator {
                     completion(.failure(NetworkError.invalidResponse(statusCode: response.statusCode)))
                 }
             }
-        }.resume()
+        }
     }
 }
