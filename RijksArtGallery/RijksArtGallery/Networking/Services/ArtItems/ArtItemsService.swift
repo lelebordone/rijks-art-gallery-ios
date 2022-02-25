@@ -1,10 +1,12 @@
 import Foundation
 
-struct ArtItemsCollectionService: NetworkService {
+struct ArtItemsCollectionService: NetworkService, RijksDataService {
     typealias ResponseModel = CollectionNetworkResponse
     
-    var api: APICollection { .rijksMuseum }
     var path: String { "\(culture)/collection" }
+    var queryItems: QueryItems? {
+        [RijksDataIDs.ParameterKeys.apiKey: api.key]
+    }
     
     var culture: Culture
 }

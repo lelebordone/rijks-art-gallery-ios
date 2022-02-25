@@ -25,6 +25,16 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        
+        viewModel.fetchArtItemsCollection { result in
+            switch result {
+            case .success(let artItems):
+                print(artItems)
+            case .failure(let error):
+                // TODO: add proper error handling
+                print(error.userFacingError)
+            }
+        }
     }
     
     // MARK: - UI Setup

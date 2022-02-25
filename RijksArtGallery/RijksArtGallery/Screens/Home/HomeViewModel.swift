@@ -11,6 +11,14 @@ class HomeViewModel {
     
     // MARK: - Data fetching
     func fetchArtItemsCollection(completion: @escaping (Result<Void, NetworkError>) -> Void) {
-        // TODO: add data fetching logic
+        ArtItemsAPIProvider.fetchArtItemsCollection(with: .en) { result in
+            switch result {
+            case .success(let artItems):
+                self.artItems = artItems
+                completion(.success(()))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 }

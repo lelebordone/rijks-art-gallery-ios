@@ -32,6 +32,7 @@
 		B503095127C925D60066D0EB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503095027C925D60066D0EB /* HomeViewModel.swift */; };
 		B503095527C92A1C0066D0EB /* ArtItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503095427C92A1C0066D0EB /* ArtItemsService.swift */; };
 		B503095727C92C630066D0EB /* ArtItemsAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503095627C92C630066D0EB /* ArtItemsAPIProvider.swift */; };
+		B503095927C938A50066D0EB /* RijksDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503095827C938A50066D0EB /* RijksDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		B503095027C925D60066D0EB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B503095427C92A1C0066D0EB /* ArtItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemsService.swift; sourceTree = "<group>"; };
 		B503095627C92C630066D0EB /* ArtItemsAPIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemsAPIProvider.swift; sourceTree = "<group>"; };
+		B503095827C938A50066D0EB /* RijksDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,8 +186,8 @@
 				B503093127C4FEDB0066D0EB /* HTTPMethod.swift */,
 				B503093727C55D8B0066D0EB /* NetworkConfigurator.swift */,
 				B503093527C5593F0066D0EB /* NetworkErrors.swift */,
-				B503094027C632650066D0EB /* NetworkSession.swift */,
 				B503092F27C4FE410066D0EB /* NetworkService.swift */,
+				B503094027C632650066D0EB /* NetworkSession.swift */,
 				B503092E27C4FE2C0066D0EB /* Services */,
 			);
 			path = Networking;
@@ -194,6 +196,7 @@
 		B503092E27C4FE2C0066D0EB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B503095827C938A50066D0EB /* RijksDataService.swift */,
 				B503095327C929F30066D0EB /* ArtItems */,
 			);
 			path = Services;
@@ -394,6 +397,7 @@
 				B503095527C92A1C0066D0EB /* ArtItemsService.swift in Sources */,
 				B50308FA27C4E2FE0066D0EB /* AppDelegate.swift in Sources */,
 				B503093627C5593F0066D0EB /* NetworkErrors.swift in Sources */,
+				B503095927C938A50066D0EB /* RijksDataService.swift in Sources */,
 				B503093F27C5634B0066D0EB /* URLComponents+.swift in Sources */,
 				B503092B27C4E79D0066D0EB /* ArtItem.swift in Sources */,
 				B503094127C632650066D0EB /* NetworkSession.swift in Sources */,
