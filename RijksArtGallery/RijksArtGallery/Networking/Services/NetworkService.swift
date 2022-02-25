@@ -14,8 +14,8 @@ protocol NetworkService {
     var path: String { get }
     /// The query parameters of the service (e.g. `endpoint?key=value`)
     var queryItems: QueryItems? { get }
-    /// The `JSONDecoder` instance which will be used to decode the service's response data
-    var jsonDecoder: JSONDecoder { get }
+    /// The `Decoder` instance which will be used to decode the service's response data
+    var jsonDecoder: DataDecoder { get }
 }
 
 extension NetworkService {
@@ -26,4 +26,8 @@ extension NetworkService {
     
     /// The full endpoint URL string (i.e. `baseURL` + `path`)
     var endpointURLString: String { baseURL + path }
+}
+
+protocol DataDecoder {
+    func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : Decodable
 }

@@ -12,7 +12,7 @@
 		B50308FE27C4E2FE0066D0EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50308FD27C4E2FE0066D0EB /* ViewController.swift */; };
 		B503090327C4E3020066D0EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B503090227C4E3020066D0EB /* Assets.xcassets */; };
 		B503090627C4E3020066D0EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B503090427C4E3020066D0EB /* LaunchScreen.storyboard */; };
-		B503091127C4E3020066D0EB /* RijksArtGalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503091027C4E3020066D0EB /* RijksArtGalleryTests.swift */; };
+		B503091127C4E3020066D0EB /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503091027C4E3020066D0EB /* NetworkingTests.swift */; };
 		B503091B27C4E3020066D0EB /* RijksArtGalleryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503091A27C4E3020066D0EB /* RijksArtGalleryUITests.swift */; };
 		B503091D27C4E3020066D0EB /* RijksArtGalleryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503091C27C4E3020066D0EB /* RijksArtGalleryUITestsLaunchTests.swift */; };
 		B503092B27C4E79D0066D0EB /* ArtItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503092A27C4E79D0066D0EB /* ArtItem.swift */; };
@@ -25,6 +25,10 @@
 		B503093F27C5634B0066D0EB /* URLComponents+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503093E27C5634B0066D0EB /* URLComponents+.swift */; };
 		B503094127C632650066D0EB /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503094027C632650066D0EB /* NetworkSession.swift */; };
 		B503094327C632E10066D0EB /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503094227C632E10066D0EB /* URLSession+.swift */; };
+		B503094627C636260066D0EB /* NetworkSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503094527C636260066D0EB /* NetworkSessionMock.swift */; };
+		B503094827C6B5AC0066D0EB /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503094727C6B5AC0066D0EB /* NetworkServiceMock.swift */; };
+		B503094A27C8E8A90066D0EB /* JSONDecoder+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503094927C8E8A90066D0EB /* JSONDecoder+.swift */; };
+		B503094C27C8E8CC0066D0EB /* JSONDecoderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503094B27C8E8CC0066D0EB /* JSONDecoderMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +57,7 @@
 		B503090527C4E3020066D0EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B503090727C4E3020066D0EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B503090C27C4E3020066D0EB /* RijksArtGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RijksArtGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B503091027C4E3020066D0EB /* RijksArtGalleryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksArtGalleryTests.swift; sourceTree = "<group>"; };
+		B503091027C4E3020066D0EB /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
 		B503091627C4E3020066D0EB /* RijksArtGalleryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RijksArtGalleryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B503091A27C4E3020066D0EB /* RijksArtGalleryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksArtGalleryUITests.swift; sourceTree = "<group>"; };
 		B503091C27C4E3020066D0EB /* RijksArtGalleryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksArtGalleryUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -67,6 +71,10 @@
 		B503093E27C5634B0066D0EB /* URLComponents+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+.swift"; sourceTree = "<group>"; };
 		B503094027C632650066D0EB /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		B503094227C632E10066D0EB /* URLSession+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
+		B503094527C636260066D0EB /* NetworkSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionMock.swift; sourceTree = "<group>"; };
+		B503094727C6B5AC0066D0EB /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
+		B503094927C8E8A90066D0EB /* JSONDecoder+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+.swift"; sourceTree = "<group>"; };
+		B503094B27C8E8CC0066D0EB /* JSONDecoderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +138,7 @@
 		B503090F27C4E3020066D0EB /* RijksArtGalleryTests */ = {
 			isa = PBXGroup;
 			children = (
-				B503091027C4E3020066D0EB /* RijksArtGalleryTests.swift */,
+				B503094427C636040066D0EB /* Networking */,
 			);
 			path = RijksArtGalleryTests;
 			sourceTree = "<group>";
@@ -187,11 +195,31 @@
 		B503093B27C55FA40066D0EB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B503094927C8E8A90066D0EB /* JSONDecoder+.swift */,
 				B503093E27C5634B0066D0EB /* URLComponents+.swift */,
 				B503093C27C55FB70066D0EB /* URLRequest+.swift */,
 				B503094227C632E10066D0EB /* URLSession+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B503094427C636040066D0EB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B503091027C4E3020066D0EB /* NetworkingTests.swift */,
+				B503094D27C8E8E00066D0EB /* Mocks */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B503094D27C8E8E00066D0EB /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B503094B27C8E8CC0066D0EB /* JSONDecoderMock.swift */,
+				B503094727C6B5AC0066D0EB /* NetworkServiceMock.swift */,
+				B503094527C636260066D0EB /* NetworkSessionMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +364,7 @@
 				B503092B27C4E79D0066D0EB /* ArtItem.swift in Sources */,
 				B503094127C632650066D0EB /* NetworkSession.swift in Sources */,
 				B50308FC27C4E2FE0066D0EB /* SceneDelegate.swift in Sources */,
+				B503094A27C8E8A90066D0EB /* JSONDecoder+.swift in Sources */,
 				B503093D27C55FB70066D0EB /* URLRequest+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,7 +373,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B503091127C4E3020066D0EB /* RijksArtGalleryTests.swift in Sources */,
+				B503091127C4E3020066D0EB /* NetworkingTests.swift in Sources */,
+				B503094627C636260066D0EB /* NetworkSessionMock.swift in Sources */,
+				B503094C27C8E8CC0066D0EB /* JSONDecoderMock.swift in Sources */,
+				B503094827C6B5AC0066D0EB /* NetworkServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
