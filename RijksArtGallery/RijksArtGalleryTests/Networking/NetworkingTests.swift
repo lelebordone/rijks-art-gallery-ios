@@ -14,7 +14,7 @@ class NetworkingTests: XCTestCase {
         // GIVEN
         let service = NetworkServiceMock()
         let expectedData = Data([0, 1, 0, 1])
-        let response = HTTPURLResponse(url: URL(fileURLWithPath: service.endpointURLString),
+        let response = HTTPURLResponse(url: URL(fileURLWithPath: service.endpointURLString), // using this init to avoid unnecessary optional values
                                        statusCode: 200,
                                        httpVersion: nil,
                                        headerFields: nil)
@@ -44,7 +44,8 @@ class NetworkingTests: XCTestCase {
     func testClientErrorResponses() {
         // GIVEN
         let expectedStatusCodes = [404, 400, 403]
-        let statusCodesResponsesList = expectedStatusCodes.reduce(into: [(statusCode: Int, response: HTTPURLResponse)]()) { partialResult, statusCode in
+        let statusCodesResponsesList = expectedStatusCodes.reduce(into: [(statusCode: Int,
+                                                                          response: HTTPURLResponse)]()) { partialResult, statusCode in
             guard
                 let response = HTTPURLResponse(url: URL(fileURLWithPath: "url"),
                                                  statusCode: statusCode,
