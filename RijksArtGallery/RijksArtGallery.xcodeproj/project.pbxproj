@@ -35,6 +35,8 @@
 		B503095927C938A50066D0EB /* RijksDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503095827C938A50066D0EB /* RijksDataService.swift */; };
 		B503095C27C93DB40066D0EB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503095B27C93DB40066D0EB /* Coordinator.swift */; };
 		B503095F27C93DE70066D0EB /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503095E27C93DE70066D0EB /* Routes.swift */; };
+		B503096127C93F8F0066D0EB /* ArtCollectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503096027C93F8F0066D0EB /* ArtCollectionCoordinator.swift */; };
+		B503096327C940D90066D0EB /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503096227C940D90066D0EB /* UIViewController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		B503095827C938A50066D0EB /* RijksDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksDataService.swift; sourceTree = "<group>"; };
 		B503095B27C93DB40066D0EB /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B503095E27C93DE70066D0EB /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		B503096027C93F8F0066D0EB /* ArtCollectionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtCollectionCoordinator.swift; sourceTree = "<group>"; };
+		B503096227C940D90066D0EB /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				B503094927C8E8A90066D0EB /* JSONDecoder+.swift */,
+				B503096227C940D90066D0EB /* UIViewController+.swift */,
 				B503093E27C5634B0066D0EB /* URLComponents+.swift */,
 				B503093C27C55FB70066D0EB /* URLRequest+.swift */,
 				B503094227C632E10066D0EB /* URLSession+.swift */,
@@ -240,6 +245,7 @@
 		B503094F27C923160066D0EB /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B503096027C93F8F0066D0EB /* ArtCollectionCoordinator.swift */,
 				B503095227C925D80066D0EB /* Home */,
 			);
 			path = Screens;
@@ -407,8 +413,10 @@
 				B50308FE27C4E2FE0066D0EB /* HomeViewController.swift in Sources */,
 				B503093227C4FEDB0066D0EB /* HTTPMethod.swift in Sources */,
 				B503093427C54C6E0066D0EB /* APICollection.swift in Sources */,
+				B503096127C93F8F0066D0EB /* ArtCollectionCoordinator.swift in Sources */,
 				B503094327C632E10066D0EB /* URLSession+.swift in Sources */,
 				B503095C27C93DB40066D0EB /* Coordinator.swift in Sources */,
+				B503096327C940D90066D0EB /* UIViewController+.swift in Sources */,
 				B503095527C92A1C0066D0EB /* ArtItemsService.swift in Sources */,
 				B50308FA27C4E2FE0066D0EB /* AppDelegate.swift in Sources */,
 				B503093627C5593F0066D0EB /* NetworkErrors.swift in Sources */,

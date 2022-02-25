@@ -1,8 +1,8 @@
 import Foundation
 
-protocol Route {}
+protocol RouteProtocol {}
 
-enum ArtItemsRoute: Route {
-    case artItemsCollection
+enum ArtItemsRoute: RouteProtocol {
+    case artItemsCollection(artItems: [ArtItemCompact] = [])
     case artItemDetail(artItem: ArtItemDetails)
 }
