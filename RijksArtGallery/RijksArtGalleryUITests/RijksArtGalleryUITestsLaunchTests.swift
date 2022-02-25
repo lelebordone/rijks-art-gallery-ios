@@ -1,14 +1,6 @@
-//
-//  RijksArtGalleryUITestsLaunchTests.swift
-//  RijksArtGalleryUITests
-//
-//  Created by Emanuele Bordone on 22/02/22.
-//
-
 import XCTest
 
 class RijksArtGalleryUITestsLaunchTests: XCTestCase {
-
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }
