@@ -10,7 +10,7 @@ class HomeViewModel {
     }
     
     // MARK: - Data fetching
-    func fetchArtItems(completion: @escaping (Result<Void, NetworkError>) -> Void) {
+    func fetchArtItemsCollection(completion: @escaping (Result<Void, NetworkError>) -> Void) {
         // TODO: add data fetching logic
     }
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-struct ArtItemListService: NetworkService {
+struct ArtItemsCollectionService: NetworkService {
     typealias ResponseModel = CollectionNetworkResponse
     
     var api: APICollection { .rijksMuseum }
