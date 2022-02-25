@@ -1,6 +1,6 @@
 import Foundation
 
-class HomeViewModel {
+class ArtItemsListViewModel {
     // MARK: - Properties
     private var artItems: [ArtItemCompact]
     

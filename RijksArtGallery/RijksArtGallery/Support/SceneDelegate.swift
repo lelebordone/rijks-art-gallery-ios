@@ -7,7 +7,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
           
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = HomeViewController(viewModel: HomeViewModel())
+        let homeNavController = ArtCollectionCoordinator().create(.artItemsCollection())
+        window.rootViewController = homeNavController
         window.makeKeyAndVisible()
         self.window = window
     }
