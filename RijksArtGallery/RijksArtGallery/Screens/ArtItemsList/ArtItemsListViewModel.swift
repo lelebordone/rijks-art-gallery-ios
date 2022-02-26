@@ -2,7 +2,7 @@ import Foundation
 
 class ArtItemsListViewModel {
     // MARK: - Properties
-    private var artItems: [ArtItemCompact]
+    var artItems: [ArtItemCompact]
     
     // MARK: - Lifecycle
     init(artItems: [ArtItemCompact] = []) {

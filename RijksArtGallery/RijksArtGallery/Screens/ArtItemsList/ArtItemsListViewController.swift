@@ -26,10 +26,12 @@ class ArtItemsListViewController: UIViewController {
         
         setupUI()
         
-        viewModel.fetchArtItemsCollection(with: .en) { result in
+        viewModel.fetchArtItemsCollection(with: .en) { [weak self] result in
+            guard let self = self else { return }
+            
             switch result {
-            case .success(let artItems):
-                print(artItems)
+            case .success:
+                print(self.viewModel.artItems)
             case .failure(let error):
                 // TODO: add proper error handling
                 print(error.userFacingError)
