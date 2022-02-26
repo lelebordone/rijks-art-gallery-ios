@@ -1,6 +1,6 @@
 import UIKit
 
-class HomeViewController: UIViewController {
+class ArtItemsListViewController: UIViewController {
     // MARK: - Properties
     private let artItemsListCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -8,10 +8,10 @@ class HomeViewController: UIViewController {
         return collectionView
     }()
     
-    private let viewModel: HomeViewModel
+    private let viewModel: ArtItemsListViewModel
     
     // MARK: - Lifecycle
-    init(viewModel: HomeViewModel) {
+    init(viewModel: ArtItemsListViewModel) {
         self.viewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)
@@ -40,5 +40,7 @@ class HomeViewController: UIViewController {
     // MARK: - UI Setup
     private func setupUI() {
         view.backgroundColor = UIColor.systemBackground
+        
+        title = "Rijksmuseum Art Gallery"
     }
 }
