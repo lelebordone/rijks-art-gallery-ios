@@ -38,6 +38,7 @@
 		B503096127C93F8F0066D0EB /* ArtCollectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503096027C93F8F0066D0EB /* ArtCollectionCoordinator.swift */; };
 		B503096327C940D90066D0EB /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503096227C940D90066D0EB /* UIViewController+.swift */; };
 		B51EE76227CA45C500D94598 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE76127CA45C500D94598 /* UIView+.swift */; };
+		B51EE76527CA4B8100D94598 /* ArtItemsListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE76427CA4B8100D94598 /* ArtItemsListCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		B503096027C93F8F0066D0EB /* ArtCollectionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtCollectionCoordinator.swift; sourceTree = "<group>"; };
 		B503096227C940D90066D0EB /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		B51EE76127CA45C500D94598 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		B51EE76427CA4B8100D94598 /* ArtItemsListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemsListCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 			children = (
 				B50308FD27C4E2FE0066D0EB /* ArtItemsListViewController.swift */,
 				B503095027C925D60066D0EB /* ArtItemsListViewModel.swift */,
+				B51EE76327CA4B5000D94598 /* Views */,
 			);
 			path = ArtItemsList;
 			sourceTree = "<group>";
@@ -279,6 +282,14 @@
 				B503095E27C93DE70066D0EB /* Routes.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		B51EE76327CA4B5000D94598 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B51EE76427CA4B8100D94598 /* ArtItemsListCollectionViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,6 +433,7 @@
 				B503096327C940D90066D0EB /* UIViewController+.swift in Sources */,
 				B503095527C92A1C0066D0EB /* ArtItemsService.swift in Sources */,
 				B50308FA27C4E2FE0066D0EB /* AppDelegate.swift in Sources */,
+				B51EE76527CA4B8100D94598 /* ArtItemsListCollectionViewCell.swift in Sources */,
 				B503093627C5593F0066D0EB /* NetworkErrors.swift in Sources */,
 				B503095927C938A50066D0EB /* RijksDataService.swift in Sources */,
 				B503093F27C5634B0066D0EB /* URLComponents+.swift in Sources */,
