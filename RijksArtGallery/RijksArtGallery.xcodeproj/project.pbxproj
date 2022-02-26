@@ -37,6 +37,7 @@
 		B503095F27C93DE70066D0EB /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503095E27C93DE70066D0EB /* Routes.swift */; };
 		B503096127C93F8F0066D0EB /* ArtCollectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503096027C93F8F0066D0EB /* ArtCollectionCoordinator.swift */; };
 		B503096327C940D90066D0EB /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503096227C940D90066D0EB /* UIViewController+.swift */; };
+		B51EE76227CA45C500D94598 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE76127CA45C500D94598 /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		B503095E27C93DE70066D0EB /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		B503096027C93F8F0066D0EB /* ArtCollectionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtCollectionCoordinator.swift; sourceTree = "<group>"; };
 		B503096227C940D90066D0EB /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		B51EE76127CA45C500D94598 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				B503093E27C5634B0066D0EB /* URLComponents+.swift */,
 				B503093C27C55FB70066D0EB /* URLRequest+.swift */,
 				B503094227C632E10066D0EB /* URLSession+.swift */,
+				B51EE76127CA45C500D94598 /* UIView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				B503094A27C8E8A90066D0EB /* JSONDecoder+.swift in Sources */,
 				B503095127C925D60066D0EB /* ArtItemsListViewModel.swift in Sources */,
 				B503093D27C55FB70066D0EB /* URLRequest+.swift in Sources */,
+				B51EE76227CA45C500D94598 /* UIView+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
