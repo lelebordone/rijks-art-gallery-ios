@@ -44,4 +44,19 @@ extension UIView {
             subView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
+    
+    /// Pins to the subview to its edges with the given margins.
+    /// - Parameter subView: The view to be added as a subview.
+    /// - Parameter margins: The margins of the subview.
+    func addContentViewWithCustomMargins(_ subView: UIView, margins: UIEdgeInsets) {
+        addSubview(subView)
+        subView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            subView.topAnchor.constraint(equalTo: topAnchor, constant: margins.top),
+            subView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -margins.bottom),
+            subView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: margins.left),
+            subView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -margins.right)
+        ])
+    }
 }
