@@ -37,6 +37,12 @@
 		B503095F27C93DE70066D0EB /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503095E27C93DE70066D0EB /* Routes.swift */; };
 		B503096127C93F8F0066D0EB /* ArtCollectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503096027C93F8F0066D0EB /* ArtCollectionCoordinator.swift */; };
 		B503096327C940D90066D0EB /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503096227C940D90066D0EB /* UIViewController+.swift */; };
+		B51EE76227CA45C500D94598 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE76127CA45C500D94598 /* UIView+.swift */; };
+		B51EE76527CA4B8100D94598 /* ArtItemsListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE76427CA4B8100D94598 /* ArtItemsListCollectionViewCell.swift */; };
+		B51EE76727CB810000D94598 /* ArtItemsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE76627CB810000D94598 /* ArtItemsListItemView.swift */; };
+		B51EE76A27CB81A900D94598 /* RijksTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE76927CB81A900D94598 /* RijksTitleLabel.swift */; };
+		B51EE76C27CB9EFF00D94598 /* ArtItemsListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE76B27CB9EFF00D94598 /* ArtItemsListHeaderView.swift */; };
+		B51EE76E27CBA34F00D94598 /* RijksDescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE76D27CBA34F00D94598 /* RijksDescriptionLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +97,12 @@
 		B503095E27C93DE70066D0EB /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		B503096027C93F8F0066D0EB /* ArtCollectionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtCollectionCoordinator.swift; sourceTree = "<group>"; };
 		B503096227C940D90066D0EB /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		B51EE76127CA45C500D94598 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		B51EE76427CA4B8100D94598 /* ArtItemsListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemsListCollectionViewCell.swift; sourceTree = "<group>"; };
+		B51EE76627CB810000D94598 /* ArtItemsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemsListItemView.swift; sourceTree = "<group>"; };
+		B51EE76927CB81A900D94598 /* RijksTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksTitleLabel.swift; sourceTree = "<group>"; };
+		B51EE76B27CB9EFF00D94598 /* ArtItemsListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemsListHeaderView.swift; sourceTree = "<group>"; };
+		B51EE76D27CBA34F00D94598 /* RijksDescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksDescriptionLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +160,7 @@
 				B503092D27C4FE010066D0EB /* Networking */,
 				B503094F27C923160066D0EB /* Screens */,
 				B503092C27C4EB640066D0EB /* Support */,
+				B51EE76827CB819300D94598 /* UIComponents */,
 			);
 			path = RijksArtGallery;
 			sourceTree = "<group>";
@@ -219,6 +232,7 @@
 				B503093E27C5634B0066D0EB /* URLComponents+.swift */,
 				B503093C27C55FB70066D0EB /* URLRequest+.swift */,
 				B503094227C632E10066D0EB /* URLSession+.swift */,
+				B51EE76127CA45C500D94598 /* UIView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -256,6 +270,7 @@
 			children = (
 				B50308FD27C4E2FE0066D0EB /* ArtItemsListViewController.swift */,
 				B503095027C925D60066D0EB /* ArtItemsListViewModel.swift */,
+				B51EE76327CA4B5000D94598 /* Views */,
 			);
 			path = ArtItemsList;
 			sourceTree = "<group>";
@@ -276,6 +291,25 @@
 				B503095E27C93DE70066D0EB /* Routes.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		B51EE76327CA4B5000D94598 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B51EE76427CA4B8100D94598 /* ArtItemsListCollectionViewCell.swift */,
+				B51EE76B27CB9EFF00D94598 /* ArtItemsListHeaderView.swift */,
+				B51EE76627CB810000D94598 /* ArtItemsListItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B51EE76827CB819300D94598 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				B51EE76D27CBA34F00D94598 /* RijksDescriptionLabel.swift */,
+				B51EE76927CB81A900D94598 /* RijksTitleLabel.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,12 +447,16 @@
 				B50308FE27C4E2FE0066D0EB /* ArtItemsListViewController.swift in Sources */,
 				B503093227C4FEDB0066D0EB /* HTTPMethod.swift in Sources */,
 				B503093427C54C6E0066D0EB /* APICollection.swift in Sources */,
+				B51EE76E27CBA34F00D94598 /* RijksDescriptionLabel.swift in Sources */,
 				B503096127C93F8F0066D0EB /* ArtCollectionCoordinator.swift in Sources */,
+				B51EE76727CB810000D94598 /* ArtItemsListItemView.swift in Sources */,
 				B503094327C632E10066D0EB /* URLSession+.swift in Sources */,
 				B503095C27C93DB40066D0EB /* Coordinator.swift in Sources */,
+				B51EE76C27CB9EFF00D94598 /* ArtItemsListHeaderView.swift in Sources */,
 				B503096327C940D90066D0EB /* UIViewController+.swift in Sources */,
 				B503095527C92A1C0066D0EB /* ArtItemsService.swift in Sources */,
 				B50308FA27C4E2FE0066D0EB /* AppDelegate.swift in Sources */,
+				B51EE76527CA4B8100D94598 /* ArtItemsListCollectionViewCell.swift in Sources */,
 				B503093627C5593F0066D0EB /* NetworkErrors.swift in Sources */,
 				B503095927C938A50066D0EB /* RijksDataService.swift in Sources */,
 				B503093F27C5634B0066D0EB /* URLComponents+.swift in Sources */,
@@ -427,9 +465,11 @@
 				B503094127C632650066D0EB /* NetworkSession.swift in Sources */,
 				B503095727C92C630066D0EB /* ArtItemsAPIProvider.swift in Sources */,
 				B50308FC27C4E2FE0066D0EB /* SceneDelegate.swift in Sources */,
+				B51EE76A27CB81A900D94598 /* RijksTitleLabel.swift in Sources */,
 				B503094A27C8E8A90066D0EB /* JSONDecoder+.swift in Sources */,
 				B503095127C925D60066D0EB /* ArtItemsListViewModel.swift in Sources */,
 				B503093D27C55FB70066D0EB /* URLRequest+.swift in Sources */,
+				B51EE76227CA45C500D94598 /* UIView+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
