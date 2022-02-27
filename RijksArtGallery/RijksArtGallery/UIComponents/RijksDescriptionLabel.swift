@@ -3,11 +3,13 @@ import UIKit
 class RijksDescriptionLabel: UILabel {
     init(textAlignment: NSTextAlignment = .left,
          fontSize: CGFloat = 14,
-         fontWeight: UIFont.Weight = .regular) {
+         fontWeight: UIFont.Weight = .regular,
+         textColor: UIColor = .secondaryLabel) {
         super.init(frame: .zero)
         
         self.textAlignment = textAlignment
         self.font = UIFont.systemFont(ofSize: fontSize, weight: fontWeight)
+        self.textColor = textColor
         
         setupUI()
     }
@@ -18,8 +20,7 @@ class RijksDescriptionLabel: UILabel {
     
     private func setupUI() {
         translatesAutoresizingMaskIntoConstraints = false
-        
-        textColor = .secondaryLabel
+    
         numberOfLines = 1
         lineBreakMode = .byTruncatingTail
     }
