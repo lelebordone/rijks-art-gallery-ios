@@ -72,8 +72,14 @@ class ArtItemsListViewController: UIViewController {
 
 // MARK: - Collection View Data Source
 extension ArtItemsListViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        viewModel.sectionedDataSource.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.artItems.count
+        guard section < viewModel.sectionedDataSource.count else { return 0 }
+        
+        return viewModel.sectionedDataSource[section].items.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -85,7 +91,7 @@ extension ArtItemsListViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        let artItem = viewModel.artItems[indexPath.row]
+        let artItem = viewModel.sectionedDataSource[indexPath.section].items[indexPath.item]
         cell.configure(with: artItem)
         
         return cell

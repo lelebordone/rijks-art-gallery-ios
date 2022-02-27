@@ -29,3 +29,8 @@ extension ArtItemsListCollectionViewCell {
         artItemsListItemView.configure(with: model)
     }
 }
+
+struct ArtItemsListCollectionViewSection {
+    var title: String
+    var items: [ArtItemCompact]
+}
