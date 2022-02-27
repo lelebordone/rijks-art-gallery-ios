@@ -41,6 +41,7 @@
 		B51EE76527CA4B8100D94598 /* ArtItemsListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE76427CA4B8100D94598 /* ArtItemsListCollectionViewCell.swift */; };
 		B51EE76727CB810000D94598 /* ArtItemsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE76627CB810000D94598 /* ArtItemsListItemView.swift */; };
 		B51EE76A27CB81A900D94598 /* RijksTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE76927CB81A900D94598 /* RijksTitleLabel.swift */; };
+		B51EE76C27CB9EFF00D94598 /* ArtItemsListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE76B27CB9EFF00D94598 /* ArtItemsListHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		B51EE76427CA4B8100D94598 /* ArtItemsListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemsListCollectionViewCell.swift; sourceTree = "<group>"; };
 		B51EE76627CB810000D94598 /* ArtItemsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemsListItemView.swift; sourceTree = "<group>"; };
 		B51EE76927CB81A900D94598 /* RijksTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksTitleLabel.swift; sourceTree = "<group>"; };
+		B51EE76B27CB9EFF00D94598 /* ArtItemsListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemsListHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				B51EE76427CA4B8100D94598 /* ArtItemsListCollectionViewCell.swift */,
+				B51EE76B27CB9EFF00D94598 /* ArtItemsListHeaderView.swift */,
 				B51EE76627CB810000D94598 /* ArtItemsListItemView.swift */,
 			);
 			path = Views;
@@ -445,6 +448,7 @@
 				B51EE76727CB810000D94598 /* ArtItemsListItemView.swift in Sources */,
 				B503094327C632E10066D0EB /* URLSession+.swift in Sources */,
 				B503095C27C93DB40066D0EB /* Coordinator.swift in Sources */,
+				B51EE76C27CB9EFF00D94598 /* ArtItemsListHeaderView.swift in Sources */,
 				B503096327C940D90066D0EB /* UIViewController+.swift in Sources */,
 				B503095527C92A1C0066D0EB /* ArtItemsService.swift in Sources */,
 				B50308FA27C4E2FE0066D0EB /* AppDelegate.swift in Sources */,

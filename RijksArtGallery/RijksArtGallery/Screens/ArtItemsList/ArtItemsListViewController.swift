@@ -62,9 +62,13 @@ class ArtItemsListViewController: UIViewController {
                                            right: collectionViewPadding)
         let itemWidth = view.frame.size.width - collectionViewPadding * 2
         layout.itemSize = CGSize(width: itemWidth, height: collectionViewItemsHeight)
+        layout.headerReferenceSize = CGSize(width: view.frame.size.width, height: 60)
         
         artItemsListCollectionView.setCollectionViewLayout(layout, animated: false)
         artItemsListCollectionView.dataSource = self
+        artItemsListCollectionView.register(ArtItemsListHeaderView.self,
+                                            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                            withReuseIdentifier: ArtItemsListHeaderView.identifier)
         artItemsListCollectionView.register(ArtItemsListCollectionViewCell.self,
                                             forCellWithReuseIdentifier: ArtItemsListCollectionViewCell.identifier)
     }
@@ -72,6 +76,7 @@ class ArtItemsListViewController: UIViewController {
 
 // MARK: - Collection View Data Source
 extension ArtItemsListViewController: UICollectionViewDataSource {
+    // MARK: Number of sections and items
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         viewModel.sectionedDataSource.count
     }
@@ -81,7 +86,27 @@ extension ArtItemsListViewController: UICollectionViewDataSource {
         
         return viewModel.sectionedDataSource[section].items.count
     }
+    
+    // MARK: Header
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                                             withReuseIdentifier: ArtItemsListHeaderView.identifier,
+                                                                             for: indexPath) as? ArtItemsListHeaderView
+            else { return UICollectionReusableView() }
+            
+            let headerTitle = viewModel.sectionedDataSource[indexPath.section].title
+            header.configure(with: headerTitle)
+            
+            return header
+        default:
+            return UICollectionReusableView()
+        }
+    }
 
+    // MARK: Cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = ArtItemsListCollectionViewCell.identifier
         guard
