@@ -8,6 +8,9 @@ class ArtItemsListViewController: UIViewController {
         return collectionView
     }()
     
+    private let collectionViewPadding: CGFloat = 16
+    private let collectionViewItemsHeight: CGFloat = 128
+    
     private let viewModel: ArtItemsListViewModel
     
     // MARK: - Lifecycle
@@ -31,7 +34,7 @@ class ArtItemsListViewController: UIViewController {
             
             switch result {
             case .success:
-                print(self.viewModel.artItems)
+                self.artItemsListCollectionView.reloadData()
             case .failure(let error):
                 // TODO: add proper error handling
                 print(error.userFacingError)
@@ -42,7 +45,49 @@ class ArtItemsListViewController: UIViewController {
     // MARK: - UI Setup
     private func setupUI() {
         view.backgroundColor = UIColor.systemBackground
-        
         title = "Rijksmuseum Art Gallery"
+        
+        setupArtItemsListCollectionView()
+    }
+    
+    private func setupArtItemsListCollectionView() {
+        view.addTopSafeContentView(artItemsListCollectionView)
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = collectionViewPadding
+        layout.sectionInset = UIEdgeInsets(top: collectionViewPadding,
+                                           left: collectionViewPadding,
+                                           bottom: collectionViewPadding,
+                                           right: collectionViewPadding)
+        let itemWidth = view.frame.size.width - collectionViewPadding * 2
+        layout.itemSize = CGSize(width: itemWidth, height: collectionViewItemsHeight)
+        
+        artItemsListCollectionView.setCollectionViewLayout(layout, animated: false)
+        artItemsListCollectionView.dataSource = self
+        artItemsListCollectionView.register(ArtItemsListCollectionViewCell.self,
+                                            forCellWithReuseIdentifier: ArtItemsListCollectionViewCell.identifier)
+    }
+}
+
+// MARK: - Collection View Data Source
+extension ArtItemsListViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.artItems.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let identifier = ArtItemsListCollectionViewCell.identifier
+        guard
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
+                                                          for: indexPath) as? ArtItemsListCollectionViewCell
+        else {
+            return UICollectionViewCell()
+        }
+        
+        let artItem = viewModel.artItems[indexPath.row]
+        cell.configure(with: artItem)
+        
+        return cell
     }
 }
