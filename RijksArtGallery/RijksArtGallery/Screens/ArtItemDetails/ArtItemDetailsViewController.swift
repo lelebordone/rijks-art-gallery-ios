@@ -1,11 +1,13 @@
 import UIKit
 
-class ArtItemDetailsController: UIViewController {
+class ArtItemDetailsViewController: UIViewController {
     // MARK: - Properties
     private let containerStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 24
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = .init(top: 16, left: 16, bottom: 16, right: 16)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -21,27 +23,27 @@ class ArtItemDetailsController: UIViewController {
     }()
     
     private let datingLabel: UILabel = {
-        let label = RijksTitleLabel()
+        let label = RijksDescriptionLabel()
         return label
     }()
     
     private let artistsLabel: UILabel = {
-        let label = RijksTitleLabel()
+        let label = RijksDescriptionLabel()
         return label
     }()
     
     private let materialsLabel: UILabel = {
-        let label = RijksTitleLabel()
+        let label = RijksDescriptionLabel()
         return label
     }()
     
     private let mediumLabel: UILabel = {
-        let label = RijksTitleLabel()
+        let label = RijksDescriptionLabel()
         return label
     }()
     
     private let productionPlacesLabel: UILabel = {
-        let label = RijksTitleLabel()
+        let label = RijksDescriptionLabel()
         return label
     }()
     
@@ -79,7 +81,7 @@ class ArtItemDetailsController: UIViewController {
         detailsContainerStackView.spacing = 12
         detailsContainerStackView.distribution = .equalSpacing
         
-        containerStackView.addArrangedSubview(detailsContainerStackView)
+        [detailsContainerStackView, UIView()].forEach { containerStackView.addArrangedSubview($0) }
         
         let titlesStackView = UIStackView()
         titlesStackView.axis = .vertical
@@ -88,31 +90,31 @@ class ArtItemDetailsController: UIViewController {
         titlesStackView.distribution = .equalSpacing
         titlesStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        [titlesStackView, detailsContainerStackView].forEach { detailsContainerStackView.addArrangedSubview($0) }
-        
+        [titlesStackView, labelsStackView, UIView()].forEach { detailsContainerStackView.addArrangedSubview($0) }
+
         let labels = [datingLabel, artistsLabel, materialsLabel, mediumLabel, productionPlacesLabel]
         let artItem = viewModel.artItem
-        
+
         labels.enumerated().forEach { (index, label) in
             // UI configuration
             let labelCase = ArtItemDetails.ArtItemDetailsLabels.allCases[index]
             let title = labelCase.title
-            let titleLabel = RijksTitleLabel(fontWeight: .medium)
+            let titleLabel = RijksDescriptionLabel(fontWeight: .medium, textColor: .label)
             titleLabel.text = title
-            
+
             switch labelCase {
             case .dating:
-                datingLabel.text = "\(artItem.dating.period)"
+                label.text = "\(artItem.dating.yearLate)"
             case .artists:
-                artistsLabel.text = artItem.principalMakersLabel
+                label.text = artItem.principalMakersLabel
             case .materials:
-                materialsLabel.text = artItem.materialsLabel
+                label.text = artItem.materialsLabel
             case .medium:
-                mediumLabel.text = artItem.physicalMedium
+                label.text = artItem.physicalMedium
             case .productionPlaces:
-                productionPlacesLabel.text = artItem.productionPlacesLabel
+                label.text = artItem.productionPlacesLabel
             }
-            
+
             // UI setup
             titlesStackView.addArrangedSubview(titleLabel)
             labelsStackView.addArrangedSubview(label)

@@ -15,9 +15,9 @@ class ArtItemsListViewModel {
     }
     
     // MARK: - Data fetching
-    func fetchArtItemsCollection(with culture: Culture = .nl,
+    func fetchArtItemsCollection(using culture: Culture = .nl,
                                  completion: @escaping (Result<Void, NetworkError>) -> Void) {
-        ArtItemsAPIProvider.fetchArtItemsCollection(with: culture) { result in
+        ArtItemsAPIProvider.fetchArtItemsCollection(using: culture) { result in
             switch result {
             case .success(let artItems):
                 self.artItems = artItems
@@ -26,6 +26,12 @@ class ArtItemsListViewModel {
                 completion(.failure(error))
             }
         }
+    }
+    
+    func fetchArtItemDetails(with objectNumber: String,
+                             using culture: Culture = .nl,
+                             completion: @escaping (Result<ArtItemDetails, NetworkError>) -> Void) {
+        ArtItemsAPIProvider.fetchArtItemDetails(with: objectNumber, using: culture, completion: completion)
     }
     
     // MARK: - Data source handling

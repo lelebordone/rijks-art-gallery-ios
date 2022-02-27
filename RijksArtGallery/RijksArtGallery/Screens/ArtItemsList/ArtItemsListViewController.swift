@@ -29,7 +29,7 @@ class ArtItemsListViewController: UIViewController {
         
         setupUI()
         
-        viewModel.fetchArtItemsCollection(with: .en) { [weak self] result in
+        viewModel.fetchArtItemsCollection(using: .en) { [weak self] result in
             guard let self = self else { return }
             
             switch result {

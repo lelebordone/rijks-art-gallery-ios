@@ -4,10 +4,10 @@ struct ArtCollectionCoordinator: Coordinator {
     func create(_ route: ArtItemsRoute) -> UIViewController {
         switch route {
         case .artItemsCollection(let artItems):
-            let homeViewModel = ArtItemsListViewModel(artItems: artItems)
-            let homeVC = ArtItemsListViewController(viewModel: homeViewModel)
+            let viewModel = ArtItemsListViewModel(artItems: artItems)
+            let vc = ArtItemsListViewController(viewModel: viewModel)
             
-            let nav = UINavigationController.init(rootViewController: homeVC)
+            let nav = UINavigationController.init(rootViewController: vc)
             nav.view.backgroundColor = UIColor.systemBackground
             nav.navigationBar.isTranslucent = false
             nav.navigationBar.setBackgroundImage(nil, for: .default)
@@ -15,8 +15,11 @@ struct ArtCollectionCoordinator: Coordinator {
             nav.navigationBar.tintColor = .black
             
             return nav
-        case .artItemDetail(_):
-            return UIViewController()
+        case .artItemDetail(let artItem):
+            let viewModel = ArtItemDetailsViewModel(artItem: artItem)
+            let vc = ArtItemDetailsViewController(viewModel: viewModel)
+            
+            return vc
         }
     }
     

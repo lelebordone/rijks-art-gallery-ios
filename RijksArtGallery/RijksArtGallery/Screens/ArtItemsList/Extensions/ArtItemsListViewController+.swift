@@ -53,6 +53,16 @@ extension ArtItemsListViewController: UICollectionViewDataSource {
 extension ArtItemsListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedItem = viewModel.sectionedDataSource[indexPath.section].items[indexPath.item]
-        print(selectedItem)
+        viewModel.fetchArtItemDetails(with: selectedItem.objectNumber, using: .en) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let details):
+                ArtCollectionCoordinator().push(.artItemDetail(artItem: details), from: self)
+            case .failure(let error):
+                // TODO: add proper error handling
+                print(error.userFacingError)
+            }
+        }
     }
 }

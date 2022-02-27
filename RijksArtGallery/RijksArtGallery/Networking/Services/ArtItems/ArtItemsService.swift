@@ -10,3 +10,15 @@ struct ArtItemsCollectionService: NetworkService, RijksDataService {
     
     var culture: Culture
 }
+
+struct ArtItemsCollectionDetailsService: NetworkService, RijksDataService {
+    typealias ResponseModel = CollectionDetailsNetworkResponse
+    
+    var path: String { "\(culture)/collection/\(objectNumber)" }
+    var queryItems: QueryItems? {
+        [RijksDataIDs.ParameterKeys.apiKey: api.key]
+    }
+    
+    var culture: Culture
+    var objectNumber: String
+}

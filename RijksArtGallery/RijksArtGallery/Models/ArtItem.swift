@@ -66,36 +66,23 @@ struct Links: Decodable {
 // MARK: - Collection Details
 // MARK: Collection Details API network response
 struct CollectionDetailsNetworkResponse: Decodable {
-    let elapsedMilliseconds, count: Int
+    let elapsedMilliseconds: Int
     let artItemDetails: ArtItemDetails
     
     enum CodingKeys: String, CodingKey {
-        case elapsedMilliseconds, count
+        case elapsedMilliseconds
         case artItemDetails = "artObject"
     }
 }
 
 // MARK: ArtObject
 struct ArtItemDetails: ArtItem {
-    let links: CollectionDetailsLink
-    let priref, language: String
     let colors: [Color]
-    let colorsWithNormalization: [ColorsWithNormalization]
-    let normalizedColors, normalized32Colors: [Color]
-    let titles: [String]
     let description: String
-    let objectTypes, objectCollection: [String]
     let principalMakers: [PrincipalMaker]
-    let plaqueDescriptionDutch, plaqueDescriptionEnglish, principalMaker: String
-    let acquisition: Acquisition
     let materials: [String]
     let dating: Dating
-    let classification: Classification
-    let historicalPersons: [String]
-    let documentation: [String]
-    let dimensions: [Dimension]
-    let physicalMedium, subTitle, scLabelLine: String
-    let label: Label
+    let physicalMedium, subTitle: String
     let location: String
     
     // ArtItem
@@ -107,25 +94,10 @@ struct ArtItemDetails: ArtItem {
     let productionPlaces: [String]
 }
 
-// MARK: Acquisition
-struct Acquisition: Decodable {
-    let method, date, creditLine: String
-}
-
-// MARK: Classification
-struct Classification: Decodable {
-    let iconClassIdentifier: [String]
-}
-
 // MARK: Color
 struct Color: Decodable {
     let percentage: Int
     let hex: String
-}
-
-// MARK: ColorsWithNormalization
-struct ColorsWithNormalization: Decodable {
-    let originalHex, normalizedHex: String
 }
 
 // MARK: Dating
@@ -134,37 +106,9 @@ struct Dating: Decodable {
     let sortingDate, period, yearEarly, yearLate: Int
 }
 
-// MARK: Dimension
-struct Dimension: Decodable {
-    let unit, type: String
-    let value: String
-}
-
-// MARK: Label
-struct Label: Decodable {
-    let title, makerLine, labelDescription, notes, date: String
-
-    enum CodingKeys: String, CodingKey {
-        case title, makerLine
-        case labelDescription = "description"
-        case notes, date
-    }
-}
-
-// MARK: CollectionDetailsLink
-/// The [Collection Details API](https://data.rijksmuseum.nl/object-metadata/api/#collection-details-api) link of the art item
-struct CollectionDetailsLink: Decodable {
-    let search: String
-}
-
 // MARK: PrincipalMaker
 struct PrincipalMaker: Decodable {
-    let name, unFixedName, placeOfBirth, dateOfBirth: String
-    let dateOfDeath: String
-    let placeOfDeath: String
-    let occupation, roles: [String]
-    let nationality: String
-    let productionPlaces: [String]
+    let name: String
 }
 
 // MARK: Helper methods
@@ -189,9 +133,19 @@ extension ArtItemDetails {
     }
     
     var principalMakersNames: [String] { principalMakers.map { $0.name } }
-    var principalMakersLabel: String { principalMakersNames.joined(separator: ", ")}
+    var principalMakersLabel: String {
+        guard !principalMakersNames.isEmpty else { return "N/A" }
+        
+        return principalMakersNames.joined(separator: ", ")
+    }
     
-    var materialsLabel: String { materials.joined(separator: ", ") }
+    var materialsLabel: String {
+        guard !materials.isEmpty else { return "N/A" }
+        return materials.joined(separator: ", ")
+    }
     
-    var productionPlacesLabel: String { productionPlaces.joined(separator: ", ") }
+    var productionPlacesLabel: String {
+        guard !productionPlaces.isEmpty else { return "N/A" }
+        return productionPlaces.joined(separator: ", ")
+    }
 }
