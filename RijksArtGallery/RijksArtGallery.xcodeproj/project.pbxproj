@@ -44,6 +44,8 @@
 		B51EE76C27CB9EFF00D94598 /* ArtItemsListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE76B27CB9EFF00D94598 /* ArtItemsListHeaderView.swift */; };
 		B51EE76E27CBA34F00D94598 /* RijksDescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE76D27CBA34F00D94598 /* RijksDescriptionLabel.swift */; };
 		B51EE77127CBCB2C00D94598 /* ArtItemsListViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77027CBCB2C00D94598 /* ArtItemsListViewController+.swift */; };
+		B51EE77427CBCBF100D94598 /* ArtItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77327CBCBF100D94598 /* ArtItemDetailsViewController.swift */; };
+		B51EE77627CBCD5000D94598 /* ArtItemDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77527CBCD5000D94598 /* ArtItemDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		B51EE76B27CB9EFF00D94598 /* ArtItemsListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemsListHeaderView.swift; sourceTree = "<group>"; };
 		B51EE76D27CBA34F00D94598 /* RijksDescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksDescriptionLabel.swift; sourceTree = "<group>"; };
 		B51EE77027CBCB2C00D94598 /* ArtItemsListViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArtItemsListViewController+.swift"; sourceTree = "<group>"; };
+		B51EE77327CBCBF100D94598 /* ArtItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemDetailsViewController.swift; sourceTree = "<group>"; };
+		B51EE77527CBCD5000D94598 /* ArtItemDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				B503096027C93F8F0066D0EB /* ArtCollectionCoordinator.swift */,
+				B51EE77227CBCBD900D94598 /* ArtItemDetails */,
 				B503095227C925D80066D0EB /* ArtItemsList */,
 			);
 			path = Screens;
@@ -321,6 +326,15 @@
 				B51EE77027CBCB2C00D94598 /* ArtItemsListViewController+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B51EE77227CBCBD900D94598 /* ArtItemDetails */ = {
+			isa = PBXGroup;
+			children = (
+				B51EE77327CBCBF100D94598 /* ArtItemDetailsViewController.swift */,
+				B51EE77527CBCD5000D94598 /* ArtItemDetailsViewModel.swift */,
+			);
+			path = ArtItemDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,6 +487,8 @@
 				B503095927C938A50066D0EB /* RijksDataService.swift in Sources */,
 				B503093F27C5634B0066D0EB /* URLComponents+.swift in Sources */,
 				B503092B27C4E79D0066D0EB /* ArtItem.swift in Sources */,
+				B51EE77427CBCBF100D94598 /* ArtItemDetailsViewController.swift in Sources */,
+				B51EE77627CBCD5000D94598 /* ArtItemDetailsViewModel.swift in Sources */,
 				B503095F27C93DE70066D0EB /* Routes.swift in Sources */,
 				B503094127C632650066D0EB /* NetworkSession.swift in Sources */,
 				B503095727C92C630066D0EB /* ArtItemsAPIProvider.swift in Sources */,

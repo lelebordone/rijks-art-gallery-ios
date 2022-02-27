@@ -166,3 +166,32 @@ struct PrincipalMaker: Decodable {
     let nationality: String
     let productionPlaces: [String]
 }
+
+// MARK: Helper methods
+extension ArtItemDetails {
+    enum ArtItemDetailsLabels: CaseIterable {
+        case dating, artists, materials, medium, productionPlaces
+        
+        var title: String {
+            switch self {
+            case .dating:
+                return "When"
+            case .artists:
+                return "Artists"
+            case .materials:
+                return "Materials"
+            case .medium:
+                return "Medium"
+            case .productionPlaces:
+                return "Production places"
+            }
+        }
+    }
+    
+    var principalMakersNames: [String] { principalMakers.map { $0.name } }
+    var principalMakersLabel: String { principalMakersNames.joined(separator: ", ")}
+    
+    var materialsLabel: String { materials.joined(separator: ", ") }
+    
+    var productionPlacesLabel: String { productionPlaces.joined(separator: ", ") }
+}
