@@ -9,15 +9,24 @@ class ArtItemsListViewModel {
     // Could be easily replaced by a simple array of tuples [(title: String, items: [ArtItemCompact])]
     private(set) var sectionedDataSource = [ArtItemsListCollectionViewSection]()
     
+    var pageNumber: Int
+    var resultsPerPage: Int
+    
     // MARK: - Lifecycle
-    init(artItems: [ArtItemCompact] = []) {
+    init(artItems: [ArtItemCompact] = [],
+         pageNumber: Int = 0,
+         resultsPerPage: Int = 10) {
         self.artItems = artItems
+        self.pageNumber = pageNumber
+        self.resultsPerPage = resultsPerPage
     }
     
     // MARK: - Data fetching
     func fetchArtItemsCollection(using culture: Culture = .nl,
                                  completion: @escaping (Result<Void, NetworkError>) -> Void) {
-        ArtItemsAPIProvider.fetchArtItemsCollection(using: culture) { result in
+        ArtItemsAPIProvider.fetchArtItemsCollection(pageNumber: pageNumber,
+                                                    resultsPerPage: resultsPerPage,
+                                                    using: culture) { result in
             switch result {
             case .success(let artItems):
                 self.artItems = artItems

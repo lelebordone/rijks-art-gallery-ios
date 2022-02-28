@@ -26,6 +26,8 @@ enum APICollection {
 enum RijksDataIDs {
     enum ParameterKeys {
         static let apiKey = "key"
+        static let pageNumber = "p"
+        static let resultsPerPage = "ps"
     }
 }
 
