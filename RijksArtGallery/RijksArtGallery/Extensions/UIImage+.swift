@@ -22,6 +22,12 @@ extension UIImageView {
             return
         }
         
+        // Set a placeholder while loading
+        if let placeholder = UIImage(named: placeholderID) {
+            let configuratedImage = imageConfigurator?(placeholder)
+            image = configuratedImage ?? placeholder
+        }
+        
         // Asynchronously load the image
         DispatchQueue.global().async { [weak self] in
             if let data = try? Data(contentsOf: url) {
