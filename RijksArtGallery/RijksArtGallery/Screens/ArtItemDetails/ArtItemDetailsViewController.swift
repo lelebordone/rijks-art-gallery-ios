@@ -47,6 +47,11 @@ class ArtItemDetailsViewController: UIViewController {
         return label
     }()
     
+    private let descriptionLabel: UILabel = {
+        let label = RijksDescriptionLabel()
+        return label
+    }()
+    
     let viewModel: ArtItemDetailsViewModel
     
     // MARK: - Lifecycle
@@ -82,7 +87,9 @@ class ArtItemDetailsViewController: UIViewController {
         detailsContainerStackView.spacing = 12
         detailsContainerStackView.distribution = .equalSpacing
         
-        [detailsContainerStackView, UIView()].forEach { containerScrollStack.stackView.addArrangedSubview($0) }
+        [detailsContainerStackView, descriptionLabel, UIView()].forEach {
+            containerScrollStack.stackView.addArrangedSubview($0)
+        }
         
         let titlesStackView = UIStackView()
         titlesStackView.axis = .vertical
@@ -120,5 +127,7 @@ class ArtItemDetailsViewController: UIViewController {
             titlesStackView.addArrangedSubview(titleLabel)
             labelsStackView.addArrangedSubview(label)
         }
+        
+        descriptionLabel.text = artItem.description
     }
 }
