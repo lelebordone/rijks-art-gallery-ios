@@ -69,4 +69,8 @@ extension UIView {
             subView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
+    
+    func removeAllSubviews() {
+        subviews.forEach { $0.removeFromSuperview() }
+    }
 }

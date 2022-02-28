@@ -35,13 +35,15 @@ class ArtItemsListItemView: UIView {
         return label
     }()
     
-    private let imageView: UIImageView = {
+    let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
         imageView.backgroundColor = .systemGray4.withAlphaComponent(0.1)
         return imageView
     }()
+    
+    var preferredImageSize: CGFloat?
     
     // MARK: Lifecycle
     override init(frame: CGRect) {
@@ -88,15 +90,22 @@ extension ArtItemsListItemView {
         subtitleLable.text = model.longTitle
         
         // Setting the initial placeholder image
-        let imageSize = CGSize(width: cellSize,
-                               height: cellSize)
-        let placeholderImage = PlaceholderImages.artItemListThumbnail.scaledPreservingAspectRatio(targetSize: imageSize)
-        imageView.image = placeholderImage
+        preferredImageSize = cellSize
+        setPlaceholderImage(with: cellSize)
         
         imageView.loadImage(from: model.webImage.url,
                             imageCache: imageCache,
                             placeholderID: PlaceholderImages.artItemListThumbnailID) { image in
-            image.scaledPreservingAspectRatio(targetSize: imageSize)
+            image.scaledPreservingAspectRatio(targetSize: CGSize(width: cellSize,
+                                                                 height: cellSize))
         }
+    }
+    
+    func setPlaceholderImage(with size: CGFloat) {
+        // Setting the initial placeholder image
+        let imageSize = CGSize(width: size,
+                               height: size)
+        let placeholderImage = PlaceholderImages.artItemListThumbnail.scaledPreservingAspectRatio(targetSize: imageSize)
+        imageView.image = placeholderImage
     }
 }
