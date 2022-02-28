@@ -1,6 +1,6 @@
 import UIKit
 
-class ArtItemsListViewController: UIViewController {
+class ArtItemsListViewController: UIViewController, Loadable {
     // MARK: - Properties
     private let artItemsListCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -8,14 +8,17 @@ class ArtItemsListViewController: UIViewController {
         return collectionView
     }()
     
-    private let collectionViewPadding: CGFloat = 16
-    private let collectionViewItemsHeight: CGFloat = 128
+    let collectionViewPadding: CGFloat = 16
+    let loadingView = RijksLoadingView()
     
     let viewModel: ArtItemsListViewModel
+    let imageCache: RijksCache<String, UIImage>
     
     // MARK: - Lifecycle
-    init(viewModel: ArtItemsListViewModel) {
+    init(viewModel: ArtItemsListViewModel,
+         imageCache: RijksCache<String, UIImage> = .init()) {
         self.viewModel = viewModel
+        self.imageCache = imageCache
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -29,6 +32,7 @@ class ArtItemsListViewController: UIViewController {
         
         setupUI()
         
+        showLoading(on: view)
         viewModel.fetchArtItemsCollection(using: .en) { [weak self] result in
             guard let self = self else { return }
             
@@ -39,6 +43,8 @@ class ArtItemsListViewController: UIViewController {
                 // TODO: add proper error handling
                 print(error.userFacingError)
             }
+            
+            self.hideLoading()
         }
     }
     
@@ -61,7 +67,7 @@ class ArtItemsListViewController: UIViewController {
                                            bottom: collectionViewPadding,
                                            right: collectionViewPadding)
         let itemWidth = view.frame.size.width - collectionViewPadding * 2
-        layout.itemSize = CGSize(width: itemWidth, height: collectionViewItemsHeight)
+        layout.itemSize = CGSize(width: itemWidth, height: itemWidth + 60 + 12)
         layout.headerReferenceSize = CGSize(width: view.frame.size.width, height: 60)
         
         artItemsListCollectionView.setCollectionViewLayout(layout, animated: false)

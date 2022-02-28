@@ -43,8 +43,9 @@ extension ArtItemsListViewController: UICollectionViewDataSource {
         }
         
         let artItem = viewModel.sectionedDataSource[indexPath.section].items[indexPath.item]
-        cell.configure(with: artItem)
-        
+        cell.configure(with: artItem,
+                       imageCache: imageCache,
+                       cellSize: collectionView.contentSize.width - collectionViewPadding * 2)
         return cell
     }
 }
@@ -53,9 +54,12 @@ extension ArtItemsListViewController: UICollectionViewDataSource {
 extension ArtItemsListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedItem = viewModel.sectionedDataSource[indexPath.section].items[indexPath.item]
+        
+        showLoading(on: view)
         viewModel.fetchArtItemDetails(with: selectedItem.objectNumber, using: .en) { [weak self] result in
             guard let self = self else { return }
             
+            self.hideLoading()
             switch result {
             case .success(let details):
                 ArtCollectionCoordinator().push(.artItemDetail(artItem: details), from: self)

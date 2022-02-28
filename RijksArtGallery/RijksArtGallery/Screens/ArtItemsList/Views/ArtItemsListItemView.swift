@@ -5,6 +5,8 @@ class ArtItemsListItemView: UIView {
     private let containerStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
+        stackView.spacing = 12
+        stackView.distribution = .equalSpacing
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -33,6 +35,14 @@ class ArtItemsListItemView: UIView {
         return label
     }()
     
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
+        imageView.backgroundColor = .systemGray4.withAlphaComponent(0.1)
+        return imageView
+    }()
+    
     // MARK: Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,15 +64,39 @@ class ArtItemsListItemView: UIView {
         
         addContentView(containerStackView)
         
-        [headerStackView, UIView()].forEach { containerStackView.addArrangedSubview($0) }
+        let imageContainer = UIView()
+        imageContainer.translatesAutoresizingMaskIntoConstraints = false
+        imageContainer.backgroundColor = .systemGray4.withAlphaComponent(0.2)
+        imageContainer.addContentViewCentered(imageView)
+        
+        [headerStackView, imageContainer].forEach { containerStackView.addArrangedSubview($0) }
         [titleLabel, subtitleLable].forEach { headerStackView.addArrangedSubview($0) }
+        
+        NSLayoutConstraint.activate([
+            imageContainer.widthAnchor.constraint(equalTo: widthAnchor),
+            imageContainer.heightAnchor.constraint(equalTo: imageContainer.widthAnchor)
+        ])
     }
 }
 
 // MARK: - UI configuration
 extension ArtItemsListItemView {
-    func configure(with model: ArtItemCompact) {
+    func configure(with model: ArtItemCompact,
+                   imageCache: RijksCache<String, UIImage>,
+                   cellSize: CGFloat) {
         titleLabel.text = model.title
         subtitleLable.text = model.longTitle
+        
+        // Setting the initial placeholder image
+        let imageSize = CGSize(width: cellSize,
+                               height: cellSize)
+        let placeholderImage = PlaceholderImages.artItemListThumbnail.scaledPreservingAspectRatio(targetSize: imageSize)
+        imageView.image = placeholderImage
+        
+        imageView.loadImage(from: model.webImage.url,
+                            imageCache: imageCache,
+                            placeholderID: PlaceholderImages.artItemListThumbnailID) { image in
+            image.scaledPreservingAspectRatio(targetSize: imageSize)
+        }
     }
 }

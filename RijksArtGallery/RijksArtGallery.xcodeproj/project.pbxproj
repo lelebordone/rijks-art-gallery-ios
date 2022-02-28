@@ -46,6 +46,10 @@
 		B51EE77127CBCB2C00D94598 /* ArtItemsListViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77027CBCB2C00D94598 /* ArtItemsListViewController+.swift */; };
 		B51EE77427CBCBF100D94598 /* ArtItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77327CBCBF100D94598 /* ArtItemDetailsViewController.swift */; };
 		B51EE77627CBCD5000D94598 /* ArtItemDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77527CBCD5000D94598 /* ArtItemDetailsViewModel.swift */; };
+		B51EE77927CCCC8000D94598 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77827CCCC8000D94598 /* Constants.swift */; };
+		B51EE77B27CCE14400D94598 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77A27CCE14400D94598 /* UIImage+.swift */; };
+		B51EE77D27CCEBEB00D94598 /* RijksCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77C27CCEBEB00D94598 /* RijksCache.swift */; };
+		B51EE77F27CD21F500D94598 /* RijksLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77E27CD21F500D94598 /* RijksLoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +113,10 @@
 		B51EE77027CBCB2C00D94598 /* ArtItemsListViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArtItemsListViewController+.swift"; sourceTree = "<group>"; };
 		B51EE77327CBCBF100D94598 /* ArtItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemDetailsViewController.swift; sourceTree = "<group>"; };
 		B51EE77527CBCD5000D94598 /* ArtItemDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemDetailsViewModel.swift; sourceTree = "<group>"; };
+		B51EE77827CCCC8000D94598 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B51EE77A27CCE14400D94598 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		B51EE77C27CCEBEB00D94598 /* RijksCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksCache.swift; sourceTree = "<group>"; };
+		B51EE77E27CD21F500D94598 /* RijksLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksLoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +175,7 @@
 				B503094F27C923160066D0EB /* Screens */,
 				B503092C27C4EB640066D0EB /* Support */,
 				B51EE76827CB819300D94598 /* UIComponents */,
+				B51EE77727CCCC6F00D94598 /* Utilities */,
 			);
 			path = RijksArtGallery;
 			sourceTree = "<group>";
@@ -216,6 +225,7 @@
 				B503093527C5593F0066D0EB /* NetworkErrors.swift */,
 				B503092F27C4FE410066D0EB /* NetworkService.swift */,
 				B503094027C632650066D0EB /* NetworkSession.swift */,
+				B51EE77C27CCEBEB00D94598 /* RijksCache.swift */,
 				B503092E27C4FE2C0066D0EB /* Services */,
 			);
 			path = Networking;
@@ -234,11 +244,12 @@
 			isa = PBXGroup;
 			children = (
 				B503094927C8E8A90066D0EB /* JSONDecoder+.swift */,
+				B51EE77A27CCE14400D94598 /* UIImage+.swift */,
+				B51EE76127CA45C500D94598 /* UIView+.swift */,
 				B503096227C940D90066D0EB /* UIViewController+.swift */,
 				B503093E27C5634B0066D0EB /* URLComponents+.swift */,
 				B503093C27C55FB70066D0EB /* URLRequest+.swift */,
 				B503094227C632E10066D0EB /* URLSession+.swift */,
-				B51EE76127CA45C500D94598 /* UIView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -315,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				B51EE76D27CBA34F00D94598 /* RijksDescriptionLabel.swift */,
+				B51EE77E27CD21F500D94598 /* RijksLoadingView.swift */,
 				B51EE76927CB81A900D94598 /* RijksTitleLabel.swift */,
 			);
 			path = UIComponents;
@@ -335,6 +347,14 @@
 				B51EE77527CBCD5000D94598 /* ArtItemDetailsViewModel.swift */,
 			);
 			path = ArtItemDetails;
+			sourceTree = "<group>";
+		};
+		B51EE77727CCCC6F00D94598 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B51EE77827CCCC8000D94598 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -474,9 +494,11 @@
 				B503093227C4FEDB0066D0EB /* HTTPMethod.swift in Sources */,
 				B503093427C54C6E0066D0EB /* APICollection.swift in Sources */,
 				B51EE76E27CBA34F00D94598 /* RijksDescriptionLabel.swift in Sources */,
+				B51EE77927CCCC8000D94598 /* Constants.swift in Sources */,
 				B503096127C93F8F0066D0EB /* ArtCollectionCoordinator.swift in Sources */,
 				B51EE76727CB810000D94598 /* ArtItemsListItemView.swift in Sources */,
 				B503094327C632E10066D0EB /* URLSession+.swift in Sources */,
+				B51EE77F27CD21F500D94598 /* RijksLoadingView.swift in Sources */,
 				B503095C27C93DB40066D0EB /* Coordinator.swift in Sources */,
 				B51EE76C27CB9EFF00D94598 /* ArtItemsListHeaderView.swift in Sources */,
 				B503096327C940D90066D0EB /* UIViewController+.swift in Sources */,
@@ -488,6 +510,7 @@
 				B503093F27C5634B0066D0EB /* URLComponents+.swift in Sources */,
 				B503092B27C4E79D0066D0EB /* ArtItem.swift in Sources */,
 				B51EE77427CBCBF100D94598 /* ArtItemDetailsViewController.swift in Sources */,
+				B51EE77D27CCEBEB00D94598 /* RijksCache.swift in Sources */,
 				B51EE77627CBCD5000D94598 /* ArtItemDetailsViewModel.swift in Sources */,
 				B503095F27C93DE70066D0EB /* Routes.swift in Sources */,
 				B503094127C632650066D0EB /* NetworkSession.swift in Sources */,
@@ -496,6 +519,7 @@
 				B51EE76A27CB81A900D94598 /* RijksTitleLabel.swift in Sources */,
 				B503094A27C8E8A90066D0EB /* JSONDecoder+.swift in Sources */,
 				B503095127C925D60066D0EB /* ArtItemsListViewModel.swift in Sources */,
+				B51EE77B27CCE14400D94598 /* UIImage+.swift in Sources */,
 				B503093D27C55FB70066D0EB /* URLRequest+.swift in Sources */,
 				B51EE76227CA45C500D94598 /* UIView+.swift in Sources */,
 			);
