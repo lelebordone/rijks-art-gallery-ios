@@ -12,6 +12,19 @@ class ArtItemsListViewModel {
     var pageNumber: Int
     var resultsPerPage: Int
     
+    var totalArtItemsCount: Int?
+    var numberOfArtItemsLoaded: Int {
+        pageNumber * resultsPerPage
+    }
+    
+    private var canRequestNextPage: Bool {
+        guard let totalArtItemsCount = totalArtItemsCount else { return true }
+
+        return numberOfArtItemsLoaded < totalArtItemsCount
+    }
+    
+    var isLoading = false
+    
     // MARK: - Lifecycle
     init(artItems: [ArtItemCompact] = [],
          pageNumber: Int = 0,
@@ -24,16 +37,28 @@ class ArtItemsListViewModel {
     // MARK: - Data fetching
     func fetchArtItemsCollection(using culture: Culture = .nl,
                                  completion: @escaping (Result<Void, NetworkError>) -> Void) {
+        // Check that there are still items to be loaded
+        // Could also calculate the max number of pages from `totalArtItemsCount` and use that has a check
+        guard canRequestNextPage else {
+            completion(.failure(.noMorePages))
+            return
+       }
+        
+        isLoading = true
         ArtItemsAPIProvider.fetchArtItemsCollection(pageNumber: pageNumber,
                                                     resultsPerPage: resultsPerPage,
                                                     using: culture) { result in
             switch result {
-            case .success(let artItems):
-                self.artItems = artItems
+            case .success(let result):
+                self.artItems = result.artItems
+                self.pageNumber += 1
+                self.totalArtItemsCount = result.count
                 completion(.success(()))
             case .failure(let error):
                 completion(.failure(error))
             }
+            
+            self.isLoading = false
         }
     }
     

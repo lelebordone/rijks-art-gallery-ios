@@ -3,8 +3,8 @@ import UIKit
 struct ArtCollectionCoordinator: Coordinator {
     func create(_ route: ArtItemsRoute) -> UIViewController {
         switch route {
-        case .artItemsCollection(let artItems):
-            let viewModel = ArtItemsListViewModel(artItems: artItems)
+        case .artItemsCollection(let artItems, let resultsPerPage):
+            let viewModel = ArtItemsListViewModel(artItems: artItems, resultsPerPage: resultsPerPage)
             let vc = ArtItemsListViewController(viewModel: viewModel)
             
             let nav = UINavigationController.init(rootViewController: vc)

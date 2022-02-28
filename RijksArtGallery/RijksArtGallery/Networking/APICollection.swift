@@ -28,6 +28,11 @@ enum RijksDataIDs {
         static let apiKey = "key"
         static let pageNumber = "p"
         static let resultsPerPage = "ps"
+        static let sorting = "s"
+    }
+    
+    enum ParameterValues {
+        static let artistSortingAsc = "artist"
     }
 }
 

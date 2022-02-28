@@ -6,8 +6,9 @@ enum NetworkError: Error {
     case invalidResponse(statusCode: Int? = nil)
     case noData
     case decoding
+    case noMorePages
     
-    var userFacingError: UserFacingError {
+    var userFacingError: UserFacingError? {
         switch self {
         case .generic(let error):
             return UserFacingError(message: "An unexpected error has occurred",
@@ -18,6 +19,8 @@ enum NetworkError: Error {
         case .decoding:
             return UserFacingError(message: "An unexpected error has occurred",
                                    description: "There was an unexpected error during your request. We apologize for the inconvenient.")
+        default:
+            return nil
         }
     }
 }
