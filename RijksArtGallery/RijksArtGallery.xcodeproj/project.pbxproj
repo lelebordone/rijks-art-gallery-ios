@@ -46,6 +46,7 @@
 		B51EE77127CBCB2C00D94598 /* ArtItemsListViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77027CBCB2C00D94598 /* ArtItemsListViewController+.swift */; };
 		B51EE77427CBCBF100D94598 /* ArtItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77327CBCBF100D94598 /* ArtItemDetailsViewController.swift */; };
 		B51EE77627CBCD5000D94598 /* ArtItemDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77527CBCD5000D94598 /* ArtItemDetailsViewModel.swift */; };
+		B51EE77927CCCC8000D94598 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77827CCCC8000D94598 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		B51EE77027CBCB2C00D94598 /* ArtItemsListViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArtItemsListViewController+.swift"; sourceTree = "<group>"; };
 		B51EE77327CBCBF100D94598 /* ArtItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemDetailsViewController.swift; sourceTree = "<group>"; };
 		B51EE77527CBCD5000D94598 /* ArtItemDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemDetailsViewModel.swift; sourceTree = "<group>"; };
+		B51EE77827CCCC8000D94598 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				B503094F27C923160066D0EB /* Screens */,
 				B503092C27C4EB640066D0EB /* Support */,
 				B51EE76827CB819300D94598 /* UIComponents */,
+				B51EE77727CCCC6F00D94598 /* Utilities */,
 			);
 			path = RijksArtGallery;
 			sourceTree = "<group>";
@@ -337,6 +340,14 @@
 			path = ArtItemDetails;
 			sourceTree = "<group>";
 		};
+		B51EE77727CCCC6F00D94598 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B51EE77827CCCC8000D94598 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -474,6 +485,7 @@
 				B503093227C4FEDB0066D0EB /* HTTPMethod.swift in Sources */,
 				B503093427C54C6E0066D0EB /* APICollection.swift in Sources */,
 				B51EE76E27CBA34F00D94598 /* RijksDescriptionLabel.swift in Sources */,
+				B51EE77927CCCC8000D94598 /* Constants.swift in Sources */,
 				B503096127C93F8F0066D0EB /* ArtCollectionCoordinator.swift in Sources */,
 				B51EE76727CB810000D94598 /* ArtItemsListItemView.swift in Sources */,
 				B503094327C632E10066D0EB /* URLSession+.swift in Sources */,
