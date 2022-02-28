@@ -50,6 +50,7 @@
 		B51EE77B27CCE14400D94598 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77A27CCE14400D94598 /* UIImage+.swift */; };
 		B51EE77D27CCEBEB00D94598 /* RijksCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77C27CCEBEB00D94598 /* RijksCache.swift */; };
 		B51EE77F27CD21F500D94598 /* RijksLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77E27CD21F500D94598 /* RijksLoadingView.swift */; };
+		B51EE78127CD643A00D94598 /* ScrollStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE78027CD643A00D94598 /* ScrollStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		B51EE77A27CCE14400D94598 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		B51EE77C27CCEBEB00D94598 /* RijksCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksCache.swift; sourceTree = "<group>"; };
 		B51EE77E27CD21F500D94598 /* RijksLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksLoadingView.swift; sourceTree = "<group>"; };
+		B51EE78027CD643A00D94598 /* ScrollStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +330,7 @@
 				B51EE76D27CBA34F00D94598 /* RijksDescriptionLabel.swift */,
 				B51EE77E27CD21F500D94598 /* RijksLoadingView.swift */,
 				B51EE76927CB81A900D94598 /* RijksTitleLabel.swift */,
+				B51EE78027CD643A00D94598 /* ScrollStackView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				B51EE76A27CB81A900D94598 /* RijksTitleLabel.swift in Sources */,
 				B503094A27C8E8A90066D0EB /* JSONDecoder+.swift in Sources */,
 				B503095127C925D60066D0EB /* ArtItemsListViewModel.swift in Sources */,
+				B51EE78127CD643A00D94598 /* ScrollStackView.swift in Sources */,
 				B51EE77B27CCE14400D94598 /* UIImage+.swift in Sources */,
 				B503093D27C55FB70066D0EB /* URLRequest+.swift in Sources */,
 				B51EE76227CA45C500D94598 /* UIView+.swift in Sources */,
