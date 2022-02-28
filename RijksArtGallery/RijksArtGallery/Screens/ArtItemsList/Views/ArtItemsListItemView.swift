@@ -83,13 +83,13 @@ class ArtItemsListItemView: UIView {
 extension ArtItemsListItemView {
     func configure(with model: ArtItemCompact,
                    imageCache: RijksCache<String, UIImage>,
-                   cellSize: CGSize) {
+                   cellSize: CGFloat) {
         titleLabel.text = model.title
         subtitleLable.text = model.longTitle
         
         // Setting the initial placeholder image
-        let imageSize = CGSize(width: cellSize.width,
-                               height: cellSize.width)
+        let imageSize = CGSize(width: cellSize,
+                               height: cellSize)
         let placeholderImage = PlaceholderImages.artItemListThumbnail.scaledPreservingAspectRatio(targetSize: imageSize)
         imageView.image = placeholderImage
         

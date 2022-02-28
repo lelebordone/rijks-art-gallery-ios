@@ -9,7 +9,6 @@ class ArtItemsListViewController: UIViewController {
     }()
     
     let collectionViewPadding: CGFloat = 16
-    let collectionViewItemsHeight: CGFloat = 37
     
     let viewModel: ArtItemsListViewModel
     let imageCache: RijksCache<String, UIImage>

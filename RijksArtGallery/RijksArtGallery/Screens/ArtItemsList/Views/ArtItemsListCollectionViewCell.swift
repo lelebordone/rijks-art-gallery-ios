@@ -27,7 +27,7 @@ class ArtItemsListCollectionViewCell: UICollectionViewCell {
 extension ArtItemsListCollectionViewCell {
     func configure(with model: ArtItemCompact,
                    imageCache: RijksCache<String, UIImage>,
-                   cellSize: CGSize) {
+                   cellSize: CGFloat) {
         artItemsListItemView.configure(with: model,
                                        imageCache: imageCache,
                                        cellSize: cellSize)

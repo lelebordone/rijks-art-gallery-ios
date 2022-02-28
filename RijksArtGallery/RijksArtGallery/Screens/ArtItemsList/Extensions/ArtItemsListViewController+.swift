@@ -45,8 +45,7 @@ extension ArtItemsListViewController: UICollectionViewDataSource {
         let artItem = viewModel.sectionedDataSource[indexPath.section].items[indexPath.item]
         cell.configure(with: artItem,
                        imageCache: imageCache,
-                       cellSize: CGSize(width: collectionView.contentSize.width - collectionViewPadding * 2,
-                                                       height: collectionViewItemsHeight))
+                       cellSize: collectionView.contentSize.width - collectionViewPadding * 2)
         return cell
     }
 }
