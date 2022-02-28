@@ -49,6 +49,7 @@
 		B51EE77927CCCC8000D94598 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77827CCCC8000D94598 /* Constants.swift */; };
 		B51EE77B27CCE14400D94598 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77A27CCE14400D94598 /* UIImage+.swift */; };
 		B51EE77D27CCEBEB00D94598 /* RijksCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77C27CCEBEB00D94598 /* RijksCache.swift */; };
+		B51EE77F27CD21F500D94598 /* RijksLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77E27CD21F500D94598 /* RijksLoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		B51EE77827CCCC8000D94598 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B51EE77A27CCE14400D94598 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		B51EE77C27CCEBEB00D94598 /* RijksCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksCache.swift; sourceTree = "<group>"; };
+		B51EE77E27CD21F500D94598 /* RijksLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksLoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				B51EE76D27CBA34F00D94598 /* RijksDescriptionLabel.swift */,
+				B51EE77E27CD21F500D94598 /* RijksLoadingView.swift */,
 				B51EE76927CB81A900D94598 /* RijksTitleLabel.swift */,
 			);
 			path = UIComponents;
@@ -495,6 +498,7 @@
 				B503096127C93F8F0066D0EB /* ArtCollectionCoordinator.swift in Sources */,
 				B51EE76727CB810000D94598 /* ArtItemsListItemView.swift in Sources */,
 				B503094327C632E10066D0EB /* URLSession+.swift in Sources */,
+				B51EE77F27CD21F500D94598 /* RijksLoadingView.swift in Sources */,
 				B503095C27C93DB40066D0EB /* Coordinator.swift in Sources */,
 				B51EE76C27CB9EFF00D94598 /* ArtItemsListHeaderView.swift in Sources */,
 				B503096327C940D90066D0EB /* UIViewController+.swift in Sources */,

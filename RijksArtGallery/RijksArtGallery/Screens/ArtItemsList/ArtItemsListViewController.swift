@@ -1,6 +1,6 @@
 import UIKit
 
-class ArtItemsListViewController: UIViewController {
+class ArtItemsListViewController: UIViewController, Loadable {
     // MARK: - Properties
     private let artItemsListCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -9,6 +9,7 @@ class ArtItemsListViewController: UIViewController {
     }()
     
     let collectionViewPadding: CGFloat = 16
+    let loadingView = RijksLoadingView()
     
     let viewModel: ArtItemsListViewModel
     let imageCache: RijksCache<String, UIImage>
@@ -31,6 +32,7 @@ class ArtItemsListViewController: UIViewController {
         
         setupUI()
         
+        showLoading(on: view)
         viewModel.fetchArtItemsCollection(using: .en) { [weak self] result in
             guard let self = self else { return }
             
@@ -41,6 +43,8 @@ class ArtItemsListViewController: UIViewController {
                 // TODO: add proper error handling
                 print(error.userFacingError)
             }
+            
+            self.hideLoading()
         }
     }
     
