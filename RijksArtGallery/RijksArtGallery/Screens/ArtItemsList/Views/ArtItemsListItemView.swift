@@ -5,6 +5,8 @@ class ArtItemsListItemView: UIView {
     private let containerStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
+        stackView.spacing = 12
+        stackView.distribution = .equalSpacing
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -33,6 +35,14 @@ class ArtItemsListItemView: UIView {
         return label
     }()
     
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
+        imageView.backgroundColor = .systemGray4.withAlphaComponent(0.1)
+        return imageView
+    }()
+    
     // MARK: Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,15 +64,21 @@ class ArtItemsListItemView: UIView {
         
         addContentView(containerStackView)
         
-        [headerStackView, UIView()].forEach { containerStackView.addArrangedSubview($0) }
+        [headerStackView, imageView].forEach { containerStackView.addArrangedSubview($0) }
         [titleLabel, subtitleLable].forEach { headerStackView.addArrangedSubview($0) }
     }
 }
 
 // MARK: - UI configuration
 extension ArtItemsListItemView {
-    func configure(with model: ArtItemCompact) {
+    func configure(with model: ArtItemCompact,
+                   cellSize: CGSize) {
         titleLabel.text = model.title
         subtitleLable.text = model.longTitle
+        
+        let placeholderSize = CGSize(width: cellSize.width,
+                                     height: cellSize.width)
+        let placeholderImage = PlaceholderImages.artItemListThumbnail.scaledPreservingAspectRatio(targetSize: placeholderSize)
+        imageView.image = placeholderImage
     }
 }

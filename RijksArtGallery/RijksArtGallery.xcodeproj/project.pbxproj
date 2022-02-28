@@ -47,6 +47,7 @@
 		B51EE77427CBCBF100D94598 /* ArtItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77327CBCBF100D94598 /* ArtItemDetailsViewController.swift */; };
 		B51EE77627CBCD5000D94598 /* ArtItemDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77527CBCD5000D94598 /* ArtItemDetailsViewModel.swift */; };
 		B51EE77927CCCC8000D94598 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77827CCCC8000D94598 /* Constants.swift */; };
+		B51EE77B27CCE14400D94598 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77A27CCE14400D94598 /* UIImage+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		B51EE77327CBCBF100D94598 /* ArtItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemDetailsViewController.swift; sourceTree = "<group>"; };
 		B51EE77527CBCD5000D94598 /* ArtItemDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemDetailsViewModel.swift; sourceTree = "<group>"; };
 		B51EE77827CCCC8000D94598 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B51EE77A27CCE14400D94598 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,11 +239,12 @@
 			isa = PBXGroup;
 			children = (
 				B503094927C8E8A90066D0EB /* JSONDecoder+.swift */,
+				B51EE77A27CCE14400D94598 /* UIImage+.swift */,
+				B51EE76127CA45C500D94598 /* UIView+.swift */,
 				B503096227C940D90066D0EB /* UIViewController+.swift */,
 				B503093E27C5634B0066D0EB /* URLComponents+.swift */,
 				B503093C27C55FB70066D0EB /* URLRequest+.swift */,
 				B503094227C632E10066D0EB /* URLSession+.swift */,
-				B51EE76127CA45C500D94598 /* UIView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				B51EE76A27CB81A900D94598 /* RijksTitleLabel.swift in Sources */,
 				B503094A27C8E8A90066D0EB /* JSONDecoder+.swift in Sources */,
 				B503095127C925D60066D0EB /* ArtItemsListViewModel.swift in Sources */,
+				B51EE77B27CCE14400D94598 /* UIImage+.swift in Sources */,
 				B503093D27C55FB70066D0EB /* URLRequest+.swift in Sources */,
 				B51EE76227CA45C500D94598 /* UIView+.swift in Sources */,
 			);
