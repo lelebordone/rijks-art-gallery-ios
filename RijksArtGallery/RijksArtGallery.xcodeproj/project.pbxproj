@@ -48,6 +48,7 @@
 		B51EE77627CBCD5000D94598 /* ArtItemDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77527CBCD5000D94598 /* ArtItemDetailsViewModel.swift */; };
 		B51EE77927CCCC8000D94598 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77827CCCC8000D94598 /* Constants.swift */; };
 		B51EE77B27CCE14400D94598 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77A27CCE14400D94598 /* UIImage+.swift */; };
+		B51EE77D27CCEBEB00D94598 /* RijksCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EE77C27CCEBEB00D94598 /* RijksCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		B51EE77527CBCD5000D94598 /* ArtItemDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemDetailsViewModel.swift; sourceTree = "<group>"; };
 		B51EE77827CCCC8000D94598 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B51EE77A27CCE14400D94598 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		B51EE77C27CCEBEB00D94598 /* RijksCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 				B503093527C5593F0066D0EB /* NetworkErrors.swift */,
 				B503092F27C4FE410066D0EB /* NetworkService.swift */,
 				B503094027C632650066D0EB /* NetworkSession.swift */,
+				B51EE77C27CCEBEB00D94598 /* RijksCache.swift */,
 				B503092E27C4FE2C0066D0EB /* Services */,
 			);
 			path = Networking;
@@ -503,6 +506,7 @@
 				B503093F27C5634B0066D0EB /* URLComponents+.swift in Sources */,
 				B503092B27C4E79D0066D0EB /* ArtItem.swift in Sources */,
 				B51EE77427CBCBF100D94598 /* ArtItemDetailsViewController.swift in Sources */,
+				B51EE77D27CCEBEB00D94598 /* RijksCache.swift in Sources */,
 				B51EE77627CBCD5000D94598 /* ArtItemDetailsViewModel.swift in Sources */,
 				B503095F27C93DE70066D0EB /* Routes.swift in Sources */,
 				B503094127C632650066D0EB /* NetworkSession.swift in Sources */,
