@@ -68,6 +68,7 @@ class ArtItemDetailsViewController: UIViewController {
     
     // MARK: - UI Setup
     private func setupUI() {
+        view.backgroundColor = UIColor.systemBackground
         title = viewModel.artItem.title
         
         view.addTopSafeContentView(containerStackView)
