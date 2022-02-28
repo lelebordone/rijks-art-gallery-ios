@@ -12,10 +12,13 @@ class ArtItemsListViewController: UIViewController {
     let collectionViewItemsHeight: CGFloat = 37
     
     let viewModel: ArtItemsListViewModel
+    let imageCache: RijksCache<String, UIImage>
     
     // MARK: - Lifecycle
-    init(viewModel: ArtItemsListViewModel) {
+    init(viewModel: ArtItemsListViewModel,
+         imageCache: RijksCache<String, UIImage> = .init()) {
         self.viewModel = viewModel
+        self.imageCache = imageCache
         
         super.init(nibName: nil, bundle: nil)
     }

@@ -59,4 +59,14 @@ extension UIView {
             subView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -margins.right)
         ])
     }
+    
+    func addContentViewCentered(_ subView: UIView) {
+        addSubview(subView)
+        subView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            subView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            subView.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
+    }
 }

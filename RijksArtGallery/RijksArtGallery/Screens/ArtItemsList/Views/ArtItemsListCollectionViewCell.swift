@@ -26,8 +26,10 @@ class ArtItemsListCollectionViewCell: UICollectionViewCell {
 // MARK: - UI Configuration
 extension ArtItemsListCollectionViewCell {
     func configure(with model: ArtItemCompact,
+                   imageCache: RijksCache<String, UIImage>,
                    cellSize: CGSize) {
         artItemsListItemView.configure(with: model,
+                                       imageCache: imageCache,
                                        cellSize: cellSize)
     }
 }

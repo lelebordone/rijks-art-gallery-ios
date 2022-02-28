@@ -64,21 +64,39 @@ class ArtItemsListItemView: UIView {
         
         addContentView(containerStackView)
         
-        [headerStackView, imageView].forEach { containerStackView.addArrangedSubview($0) }
+        let imageContainer = UIView()
+        imageContainer.translatesAutoresizingMaskIntoConstraints = false
+        imageContainer.backgroundColor = .systemGray4.withAlphaComponent(0.2)
+        imageContainer.addContentViewCentered(imageView)
+        
+        [headerStackView, imageContainer].forEach { containerStackView.addArrangedSubview($0) }
         [titleLabel, subtitleLable].forEach { headerStackView.addArrangedSubview($0) }
+        
+        NSLayoutConstraint.activate([
+            imageContainer.widthAnchor.constraint(equalTo: widthAnchor),
+            imageContainer.heightAnchor.constraint(equalTo: imageContainer.widthAnchor)
+        ])
     }
 }
 
 // MARK: - UI configuration
 extension ArtItemsListItemView {
     func configure(with model: ArtItemCompact,
+                   imageCache: RijksCache<String, UIImage>,
                    cellSize: CGSize) {
         titleLabel.text = model.title
         subtitleLable.text = model.longTitle
         
-        let placeholderSize = CGSize(width: cellSize.width,
-                                     height: cellSize.width)
-        let placeholderImage = PlaceholderImages.artItemListThumbnail.scaledPreservingAspectRatio(targetSize: placeholderSize)
+        // Setting the initial placeholder image
+        let imageSize = CGSize(width: cellSize.width,
+                               height: cellSize.width)
+        let placeholderImage = PlaceholderImages.artItemListThumbnail.scaledPreservingAspectRatio(targetSize: imageSize)
         imageView.image = placeholderImage
+        
+        imageView.loadImage(from: model.webImage.url,
+                            imageCache: imageCache,
+                            placeholderID: PlaceholderImages.artItemListThumbnailID) { image in
+            image.scaledPreservingAspectRatio(targetSize: imageSize)
+        }
     }
 }
