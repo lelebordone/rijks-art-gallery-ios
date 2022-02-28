@@ -65,8 +65,34 @@ extension ArtItemsListViewController: UICollectionViewDelegate {
                 ArtCollectionCoordinator().push(.artItemDetail(artItem: details), from: self)
             case .failure(let error):
                 // TODO: add proper error handling
-                print(error.userFacingError)
+                print(error)
             }
+        }
+    }
+}
+
+// MARK: - Collection View scrolling
+extension ArtItemsListViewController {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let scrollingPosition = scrollView.contentOffset.y
+        guard
+            scrollingPosition > scrollView.contentSize.height - scrollView.frame.size.height - 300,
+            !viewModel.isLoading
+        else { return }
+        
+        showLoading(on: view)
+        viewModel.fetchArtItemsCollection(using: .en) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success:
+                self.artItemsListCollectionView.reloadData()
+            case .failure(let error):
+                // TODO: proper error handling
+                print(error)
+            }
+            
+            self.hideLoading()
         }
     }
 }

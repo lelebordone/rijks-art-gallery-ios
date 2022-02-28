@@ -2,7 +2,7 @@ import UIKit
 
 class ArtItemsListViewController: UIViewController, Loadable {
     // MARK: - Properties
-    private let artItemsListCollectionView: UICollectionView = {
+    let artItemsListCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
@@ -41,7 +41,7 @@ class ArtItemsListViewController: UIViewController, Loadable {
                 self.artItemsListCollectionView.reloadData()
             case .failure(let error):
                 // TODO: add proper error handling
-                print(error.userFacingError)
+                print(error)
             }
             
             self.hideLoading()

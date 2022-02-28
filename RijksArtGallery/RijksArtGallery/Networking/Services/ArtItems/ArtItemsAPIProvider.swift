@@ -1,12 +1,16 @@
 import Foundation
 
 enum ArtItemsAPIProvider {
-    static func fetchArtItemsCollection(using culture: Culture = .nl,
-                                        completion: @escaping (Result<[ArtItemCompact], NetworkError>) -> Void) {
-        NetworkConfigurator().request(service: ArtItemsCollectionService(culture: culture)) { response in
+    static func fetchArtItemsCollection(pageNumber: Int = 0,
+                                        resultsPerPage: Int = 10,
+                                        using culture: Culture = .nl,
+                                        completion: @escaping (Result<CollectionNetworkResponse, NetworkError>) -> Void) {
+        NetworkConfigurator().request(service: ArtItemsCollectionService(culture: culture,
+                                                                         pageNumber: pageNumber,
+                                                                         resultsPerPage: resultsPerPage)) { response in
             switch response {
             case .success(let result):
-                completion(.success(result.artItems))
+                completion(.success(result))
             case .failure(let error):
                 completion(.failure(error))
             }

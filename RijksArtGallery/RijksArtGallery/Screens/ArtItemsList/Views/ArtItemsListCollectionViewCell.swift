@@ -17,6 +17,15 @@ class ArtItemsListCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        guard let size = artItemsListItemView.preferredImageSize else {
+            artItemsListItemView.imageView.image = nil
+            return
+        }
+        
+        artItemsListItemView.setPlaceholderImage(with: size)
+    }
+    
     // MARK: UI Setup
     private func setupUI() {
         contentView.addContentView(artItemsListItemView)
