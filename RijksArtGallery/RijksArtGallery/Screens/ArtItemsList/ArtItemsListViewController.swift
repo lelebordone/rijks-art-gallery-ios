@@ -32,10 +32,22 @@ class ArtItemsListViewController: UIViewController, Loadable {
         
         setupUI()
         
+        fetchArtCollection()
+    }
+    
+    // MARK: Data loading
+    private func fetchArtCollection(retryCounter: Int = 0) {
+        guard retryCounter < viewModel.retryLimit else {
+            // TODO: present alert max retries reached
+            print("RETRIES LIMIT REACHED")
+            return
+        }
+        
         showLoading(on: view)
         viewModel.fetchArtItemsCollection(using: .en) { [weak self] result in
             guard let self = self else { return }
             
+            self.hideLoading()
             switch result {
             case .success:
                 self.artItemsListCollectionView.reloadData()
@@ -43,10 +55,12 @@ class ArtItemsListViewController: UIViewController, Loadable {
                 print(error)
                 guard let userError = error.userFacingError else { return }
                 
-                self.presentAlertController(error: userError)
+                self.presentCancelAlertController(title: userError.message,
+                                                  message: "Would you like to try to reload the data?",
+                                                  buttonTitle: "Reload") { _ in
+                    self.fetchArtCollection(retryCounter: retryCounter + 1)
+                }
             }
-            
-            self.hideLoading()
         }
     }
     
