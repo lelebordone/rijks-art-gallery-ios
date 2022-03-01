@@ -12,6 +12,17 @@ class ArtItemDetailsViewController: UIViewController {
         return scrollStack
     }()
     
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
+        imageView.backgroundColor = .systemGray4.withAlphaComponent(0.1)
+        imageView.layer.cornerRadius = 10
+        return imageView
+    }()
+    
+    private let maxImageHeight: CGFloat = 300
+    
     private let labelsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -79,7 +90,34 @@ class ArtItemDetailsViewController: UIViewController {
         
         view.addTopSafeContentView(containerScrollStack)
         
+        setupImageView()
         setupDetailsLabels()
+    }
+    
+    private func setupImageView() {
+        let imageContainerView = UIView()
+        imageContainerView.clipsToBounds = true
+        imageContainerView.layer.cornerRadius = 10
+        imageContainerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        containerScrollStack.stackView.addArrangedSubview(imageContainerView)
+        
+        NSLayoutConstraint.activate([
+            imageContainerView.heightAnchor.constraint(equalToConstant: maxImageHeight)
+        ])
+
+        imageContainerView.addContentViewCentered(imageView)
+        
+        let artItemImageModel = viewModel.artItem.webImage
+        imageView.loadImage(from: artItemImageModel.url,
+                            placeholderID: PlaceholderImages.artItemListThumbnailID) { [weak self] image in
+            guard let self = self else { return image }
+            
+            let targetHeight: CGFloat = self.maxImageHeight
+            let targetWidth = CGFloat(artItemImageModel.width) * targetHeight / CGFloat(artItemImageModel.height)
+            return image.scaledPreservingAspectRatio(targetSize: CGSize(width: targetWidth,
+                                                                        height: targetHeight))
+        }
     }
     
     private func setupDetailsLabels() {
