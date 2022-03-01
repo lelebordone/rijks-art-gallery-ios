@@ -2,14 +2,14 @@ import UIKit
 
 class ArtItemDetailsViewController: UIViewController {
     // MARK: - Properties
-    private let containerStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 24
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = .init(top: 16, left: 16, bottom: 16, right: 16)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
+    private let containerScrollStack: ScrollStackView = {
+        let scrollStack = ScrollStackView()
+        scrollStack.stackView.axis = .vertical
+        scrollStack.stackView.spacing = 24
+        scrollStack.stackView.isLayoutMarginsRelativeArrangement = true
+        scrollStack.stackView.layoutMargins = .init(top: 16, left: 16, bottom: 16, right: 16)
+        scrollStack.stackView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollStack
     }()
     
     private let labelsStackView: UIStackView = {
@@ -47,6 +47,11 @@ class ArtItemDetailsViewController: UIViewController {
         return label
     }()
     
+    private let descriptionLabel: UILabel = {
+        let label = RijksDescriptionLabel()
+        return label
+    }()
+    
     let viewModel: ArtItemDetailsViewModel
     
     // MARK: - Lifecycle
@@ -68,9 +73,10 @@ class ArtItemDetailsViewController: UIViewController {
     
     // MARK: - UI Setup
     private func setupUI() {
+        view.backgroundColor = UIColor.systemBackground
         title = viewModel.artItem.title
         
-        view.addTopSafeContentView(containerStackView)
+        view.addTopSafeContentView(containerScrollStack)
         
         setupDetailsLabels()
     }
@@ -81,7 +87,9 @@ class ArtItemDetailsViewController: UIViewController {
         detailsContainerStackView.spacing = 12
         detailsContainerStackView.distribution = .equalSpacing
         
-        [detailsContainerStackView, UIView()].forEach { containerStackView.addArrangedSubview($0) }
+        [detailsContainerStackView, descriptionLabel, UIView()].forEach {
+            containerScrollStack.stackView.addArrangedSubview($0)
+        }
         
         let titlesStackView = UIStackView()
         titlesStackView.axis = .vertical
@@ -119,5 +127,7 @@ class ArtItemDetailsViewController: UIViewController {
             titlesStackView.addArrangedSubview(titleLabel)
             labelsStackView.addArrangedSubview(label)
         }
+        
+        descriptionLabel.text = artItem.description
     }
 }
