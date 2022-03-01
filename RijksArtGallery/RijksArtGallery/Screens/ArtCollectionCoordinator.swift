@@ -12,7 +12,7 @@ struct ArtCollectionCoordinator: Coordinator {
             nav.navigationBar.isTranslucent = false
             nav.navigationBar.setBackgroundImage(nil, for: .default)
             nav.navigationBar.shadowImage = UIImage()
-            nav.navigationBar.tintColor = .black
+            nav.navigationBar.tintColor = .label
             
             return nav
         case .artItemDetail(let artItem):

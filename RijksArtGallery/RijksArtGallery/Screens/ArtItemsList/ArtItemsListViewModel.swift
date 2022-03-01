@@ -16,6 +16,7 @@ class ArtItemsListViewModel {
     var numberOfArtItemsLoaded: Int {
         pageNumber * resultsPerPage
     }
+    var retryLimit = 3
     
     private var canRequestNextPage: Bool {
         guard let totalArtItemsCount = totalArtItemsCount else { return true }

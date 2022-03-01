@@ -7,6 +7,7 @@ enum NetworkError: Error {
     case noData
     case decoding
     case noMorePages
+    case maxRetriesReached
     
     var userFacingError: UserFacingError? {
         switch self {
@@ -19,6 +20,9 @@ enum NetworkError: Error {
         case .decoding:
             return UserFacingError(message: "An unexpected error has occurred",
                                    description: "There was an unexpected error during your request. We apologize for the inconvenient.")
+        case .maxRetriesReached:
+            return UserFacingError(message: "Service unavailable",
+                                   description: "There seems to be some problems on our end. Please come back later.")
         default:
             return nil
         }

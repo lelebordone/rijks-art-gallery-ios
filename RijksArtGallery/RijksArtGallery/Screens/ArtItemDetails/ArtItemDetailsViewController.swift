@@ -49,6 +49,7 @@ class ArtItemDetailsViewController: UIViewController {
     
     private let descriptionLabel: UILabel = {
         let label = RijksDescriptionLabel()
+        label.numberOfLines = 0
         return label
     }()
     

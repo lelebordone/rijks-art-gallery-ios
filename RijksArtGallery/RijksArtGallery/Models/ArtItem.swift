@@ -83,7 +83,6 @@ struct ArtItemDetails: ArtItem {
     let materials: [String]
     let dating: Dating
     let physicalMedium, subTitle: String
-    let location: String
     
     // ArtItem
     let id, objectNumber, title: String
@@ -119,15 +118,15 @@ extension ArtItemDetails {
         var title: String {
             switch self {
             case .dating:
-                return "When"
+                return "When:"
             case .artists:
-                return "Artists"
+                return "Artists:"
             case .materials:
-                return "Materials"
+                return "Materials:"
             case .medium:
-                return "Medium"
+                return "Medium:"
             case .productionPlaces:
-                return "Production places"
+                return "Production places:"
             }
         }
     }
