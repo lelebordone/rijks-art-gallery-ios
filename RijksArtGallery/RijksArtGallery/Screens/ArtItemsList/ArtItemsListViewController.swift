@@ -86,7 +86,7 @@ class ArtItemsListViewController: UIViewController, Loadable {
                                            bottom: collectionViewPadding,
                                            right: collectionViewPadding)
         let itemWidth = view.frame.size.width - collectionViewPadding * 2
-        layout.itemSize = CGSize(width: itemWidth, height: itemWidth + 60 + 12)
+        layout.itemSize = CGSize(width: itemWidth, height: 95 + 60 + 12)
         layout.headerReferenceSize = CGSize(width: view.frame.size.width, height: 60)
         
         artItemsListCollectionView.setCollectionViewLayout(layout, animated: false)

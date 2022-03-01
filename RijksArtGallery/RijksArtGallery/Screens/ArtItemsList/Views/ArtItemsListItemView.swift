@@ -60,13 +60,15 @@ class ArtItemsListItemView: UIView {
     private func setupUI() {
         translatesAutoresizingMaskIntoConstraints = false
         
+        clipsToBounds = true
         layer.borderWidth = 1
         layer.borderColor = UIColor.systemGray2.withAlphaComponent(0.2).cgColor
-        layer.cornerRadius = 2
+        layer.cornerRadius = 5
         
         addContentView(containerStackView)
         
         let imageContainer = UIView()
+        imageContainer.clipsToBounds = true
         imageContainer.translatesAutoresizingMaskIntoConstraints = false
         imageContainer.backgroundColor = .systemGray4.withAlphaComponent(0.2)
         imageContainer.addContentViewCentered(imageView)
@@ -76,7 +78,7 @@ class ArtItemsListItemView: UIView {
         
         NSLayoutConstraint.activate([
             imageContainer.widthAnchor.constraint(equalTo: widthAnchor),
-            imageContainer.heightAnchor.constraint(equalTo: imageContainer.widthAnchor)
+            imageContainer.heightAnchor.constraint(equalToConstant: 82)
         ])
     }
 }
@@ -93,11 +95,12 @@ extension ArtItemsListItemView {
         preferredImageSize = cellSize
         setPlaceholderImage(with: cellSize)
         
-        imageView.loadImage(from: model.webImage.url,
+        imageView.loadImage(from: model.headerImage.url,
                             imageCache: imageCache,
                             placeholderID: PlaceholderImages.artItemListThumbnailID) { image in
-            image.scaledPreservingAspectRatio(targetSize: CGSize(width: cellSize,
-                                                                 height: cellSize))
+            let height = CGFloat(model.headerImage.height) * cellSize / CGFloat(model.headerImage.width)
+            return image.scaledPreservingAspectRatio(targetSize: CGSize(width: cellSize,
+                                                                        height: height))
         }
     }
     

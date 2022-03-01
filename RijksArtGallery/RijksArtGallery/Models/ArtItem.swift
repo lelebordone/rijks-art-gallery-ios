@@ -19,7 +19,6 @@ protocol ArtItem: Decodable {
 
 // MARK: - Collections
 // MARK: Collection API network response
-// TODO: think about how to abstract it, in order to have just one generic response model
 struct CollectionNetworkResponse: Decodable {
     let elapsedMilliseconds, count: Int
     let artItems: [ArtItemCompact]
