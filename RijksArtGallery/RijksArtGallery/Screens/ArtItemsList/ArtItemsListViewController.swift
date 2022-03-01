@@ -38,8 +38,11 @@ class ArtItemsListViewController: UIViewController, Loadable {
     // MARK: Data loading
     private func fetchArtCollection(retryCounter: Int = 0) {
         guard retryCounter < viewModel.retryLimit else {
-            // TODO: present alert max retries reached
-            print("RETRIES LIMIT REACHED")
+            if let userError = NetworkError.maxRetriesReached.userFacingError {
+                presentAlertController(error: userError)
+            }
+            print("ERROR: ART COLLECTION DATA LOADING RETRIES LIMIT REACHED")
+            
             return
         }
         
