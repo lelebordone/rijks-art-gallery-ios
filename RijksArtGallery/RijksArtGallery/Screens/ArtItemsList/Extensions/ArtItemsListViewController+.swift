@@ -64,8 +64,10 @@ extension ArtItemsListViewController: UICollectionViewDelegate {
             case .success(let details):
                 ArtCollectionCoordinator().push(.artItemDetail(artItem: details), from: self)
             case .failure(let error):
-                // TODO: add proper error handling
                 print(error)
+                guard let userError = error.userFacingError else { return }
+                
+                self.presentAlertController(error: userError)
             }
         }
     }
@@ -88,8 +90,10 @@ extension ArtItemsListViewController {
             case .success:
                 self.artItemsListCollectionView.reloadData()
             case .failure(let error):
-                // TODO: proper error handling
                 print(error)
+                guard let userError = error.userFacingError else { return }
+                
+                self.presentAlertController(error: userError)
             }
             
             self.hideLoading()

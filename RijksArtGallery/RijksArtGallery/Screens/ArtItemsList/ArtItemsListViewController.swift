@@ -40,8 +40,10 @@ class ArtItemsListViewController: UIViewController, Loadable {
             case .success:
                 self.artItemsListCollectionView.reloadData()
             case .failure(let error):
-                // TODO: add proper error handling
                 print(error)
+                guard let userError = error.userFacingError else { return }
+                
+                self.presentAlertController(error: userError)
             }
             
             self.hideLoading()
